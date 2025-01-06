@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formsothich</title>
+</head>
+<style>
+    body {
+        background-color: lightskyblue;
+        font-family: arial, sans-serif;
+    }
+
+    .form1 {
+        background-color: white;
+        width: 50%;
+        padding: 5px;
+    }
+
+    .form1 h1 {
+        text-align: center;
+        background-color: orangered;
+        color: white;
+        margin: 0;
+        padding: 5px;
+    }
+
+    label {
+        color: orangered;
+    }
+
+    .inputname, .inputemail {
+        width: 50%;
+        padding: 5px;
+        margin-left: 50px;
+    }
+
+    .hobby {
+        margin-left: 50px;
+        width: 400px;
+        height: 80px;
+        padding: 5px;
+
+    }
+
+    .submit {
+        margin-left: 105px;
+    }
+
+    .hobby_names {
+        float: right;
+    }
+
+    .form2 {
+        width: 50%;
+        background-color: lightyellow;
+        padding: 5px;
+        margin-top: 50px;
+    }
+
+    .form2 h1 {
+        text-align: center;
+        color: blue;
+    }
+
+    .form2 span {
+        color: blue;
+        display: inline-block;
+        width: 100px;
+    }
+
+    .form2 container {
+        margin: 10px 0;
+    }
+    .hoten, .diachi, .ngaysinh, .gioitinh, .class, .email, .phone{
+        padding: 5px 0;
+    }
+    .diachi input {
+        height: 100px;
+        width: 50%;
+    }
+
+    .hoten input, .email input {
+        width: 50%;
+    }
+</style>
+<body>
+<form action="google.com" method="POST" class="form1">
+    <h1>SỞ THÍCH CỦA BẠN</h1>
+    <div class="inputname">
+        <span style="color: blue; display: inline-block; width:80px">Họ và tên</span>
+        <input type="text" name="yourname" placeholder="Your name here">
+    </div>
+    <div class="inputemail">
+        <span style="color: blue; display: inline-block; width:80px">Email</span>
+        <input type="email" name="email" placeholder="Your email here">
+    </div>
+    <div class="hobby">
+        <span style="color: blue"> Sở thích</span>
+        <span class="hobby_names">
+            <input type="checkbox" id="sport" name="hobby" value="sport">
+            <label for="sport"> Thể thao</label>
+            <input type="checkbox" id="music" name="hobby" value="music">
+            <label for="music"> Âm nhạc</label>
+            <input type="checkbox" id="read" name="hobby" value="read">
+            <label for="read"> Đọc sách</label> <br>
+            <input type="checkbox" id="web" name="hobby" value="web">
+            <label for="web"> Lướt web</label>
+            <input type="checkbox" id="game" name="hobby" value="game">
+            <label for="game"> Chơi game</label>
+            <input type="checkbox" id="movie" name="hobby" value="movie">
+            <label for="movie"> Điện ảnh</label> <br>
+            <input type="checkbox" id="travel" name="hobby" value="travel">
+            <label for="travel"> Du lịch</label>
+        </span>
+    </div>
+    <div class="submit">
+        <input type="submit" name=submit" value="Gửi thông tin">
+        <input type="reset" name=reset" value="Nhập lại">
+    </div>
+</form>
+<form action="google.com" method="POST" class="form2">
+    <h1>ĐĂNG KÝ HỌC VIÊN</h1>
+    <div class="container">
+        <div class="hoten">
+            <span>Họ và tên</span>
+            <input type="text" name="name" placeholder="Your name here">
+        </div>
+        <div class="ngaysinh">
+            <span>Ngày sinh</span>
+            <input type="date" name="birthday">
+        </div>
+        <div class="gioitinh">
+            <span>Giới tính</span>
+            <input type="radio" name="gender" value="male">Nam
+            <input type="radio" name="gender" value="female">Nữ
+        </div>
+        <div class="diachi">
+            <span>Địa chỉ</span>
+            <input type="text" name="address" placeholder="Your address here">
+        </div>
+        <div class="class">
+            <span>Lớp</span>
+            <select name="class">
+                <option value="class1">Lớp A</option>
+                <option value="class2">Lớp B</option>
+                <option value="class3">Lớp C</option>
+            </select>
+        </div>
+        <div class="email">
+            <span>Email</span>
+            <input type="email" name="email" placeholder="Your email here">
+        </div>
+        <div class="phone">
+            <span>Điện thoại</span>
+            <input type="tel" name="phone" placeholder="Your phone here">
+        </div>
+        <div class="submit">
+            <input type="submit" name=submit" value="Đăng ký">
+            <input type="reset" name=reset" value="Nhập lại">
+        </div>
+    </div>
+</form>
+</body>
+</html>
