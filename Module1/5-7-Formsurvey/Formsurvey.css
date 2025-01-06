@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-weight: bold;
+}
+
+input, select {
+    font-size: 16px;
+}
+select {
+    width: 50%;
+}
+th {
+    text-align: left;
+    width: 30%;
+}
+
+table {
+    width: 100%;
+    font-size: 12px;
+}
+
+tr {
+    height: 40px;
+}
+
+td {
+    width: 15%;
+    text-align: center;
+}
+
+.dollar, .cent {
+    position: relative;
+}
+
+.dollar:after {
+    content: 'Dollars';
+    position: absolute;
+    top: 150%;
+    left: 0%;
+    font-size: 10px;
+}
+
+.cent:after {
+    content: 'Cents';
+    position: absolute;
+    top: 150%;
+    left: 0%;
+    font-size: 10px;
+}
+
+tr:nth-child(odd) {
+    background-color: #dddddd;
+}
