@@ -1,0 +1,14 @@
+.table2{
+    width: fit-content;
+    text-align: center;
+}
+.table1, h1{
+    color:blue;
+}
+.table2 td, .table2 tr, .table2 th{
+    border: 1px solid black;
+    padding: 5px;
+}
+body{
+    font-size: 20px;
+}
