@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hien thi dau ra</title>
+</head>
+<style>
+    button{
+        margin: 50px;
+        width: 80px;
+        height: 50px;
+    }
+</style>
+<body>
+<button type="button" onclick="hamAlert()"> Alert</button>
+<div id="xinchao"></div>
+<button type="button" onclick="hamInner()"> Inner</button>
+<button type="button" onclick="hamWrite()">Write</button>
+<button type="button" onclick="hamConsole()">Console</button>
+
+<script>
+    function hamAlert(){
+        alert("Xin chào")
+    }
+    function hamInner(){
+        document.getElementById("xinchao").innerHTML="Xin chào";
+    }
+    function hamWrite(){
+        document.write("Xin chào")
+    }
+    function hamConsole(){
+        console.log("Xin chào")
+    }
+</script>
+</body>
+</html>
