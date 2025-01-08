@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<script>
+  var acc = prompt("Mời cụ nhập tài khoản")
+  if(acc == "Admin"){
+    let pass = prompt("Mời cụ nhập mật khẩu")
+    if(pass == "TheMaster"){
+      document.write("Welcome")
+    } else if(pass == "null"){
+      document.write("Canceled")
+    } else {
+      document.write("Wrong password")
+    }
+  } else if(acc == "null"){
+    document.write("canceled")
+  } else {
+    document.write("I don't know you")
+  }
+</script>
+</body>
+</html>
