@@ -1,0 +1,23 @@
+.box{
+    width: 400px;
+    border: 2px solid black;
+}
+#screen{
+    margin: 2px;
+    height: 80px;
+    border: 1px solid black;
+    font-size: 30px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+tr, table, button{
+    width: 100%;
+}
+td{
+    width: 25%;
+}
+button{
+    height: 50px;
+    font-size: 25px;
+}
