@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI</title>
+</head>
+<style>
+    p {
+        font-size: 25px;
+    }
+
+    #smg {
+        font-size: 25px;
+    }
+
+    #bmi {
+        font-weight: bold;
+    }
+</style>
+<body>
+<h1>Mời cụ nhập chiều cao + cân nặng</h1>
+<p>Chiều cao (cm) <input type="number" id="height"></p>
+<p>Cân nặng (kg) <input type="number" id="weight"></p>
+<button onclick="check()">Kiểm tra</button>
+<p>Chỉ số BMI của cụ là <span id="bmi"></span><span id="msg"></span></p>
+<script>
+    function check() {
+        let height = parseInt(document.getElementById("height").value);
+        let weight = parseInt(document.getElementById("weight").value);
+        let bmi = (weight * 10000 / (height * height)).toFixed(2);
+        let msg = ""
+        if (bmi < 18.5) {
+            msg = "Cụ nên tăng khẩu phần ăn"
+            document.getElementById("msg").style.color = "green";
+        } else if (bmi < 25) {
+            msg = "Yêu được"
+            document.getElementById("msg").style.color = "black";
+        } else if (bmi < 30) {
+            msg = "Cụ nên giảm ăn"
+            document.getElementById("msg").style.color = "orange";
+        } else {
+            msg = "Béo phì rồi"
+            document.getElementById("msg").style.color = "red";
+        }
+        document.getElementById("bmi").innerHTML = `${bmi}` + " "
+        document.getElementById("msg").innerHTML = msg
+    }
+</script>
+</body>
+</html>
