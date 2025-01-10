@@ -1,0 +1,19 @@
+#imgs {
+    display: flex;
+    gap: 5px;
+    width: fit-content;
+    height: 377px;
+    overflow: hidden;
+}
+#img1, #img2, #img3, #img4, #img5 {
+    width: 177px;
+    height: fit-content;
+}
+
+img{
+    width: 177px;
+    height: 377px;
+}
+#msg{
+    color: blue;
+}
