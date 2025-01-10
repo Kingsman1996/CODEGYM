@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai6</title>
+</head>
+<body>
+<h1>Giải phương trình bậc nhất dạng ax + b = 0</h1>
+<p style="font-size: 30px">Mời nhập vào hệ số a khác 0</p>
+<input type="number" name="" id="numbera" style="font-size: 30px" placeholder="Type a here">
+<p style="font-size: 30px">Mời nhập vào hệ số b</p>
+<input type="number" name="" id="numberb" style="font-size: 30px" placeholder="Type b here"> <br>
+<button onclick="tinhToan()" style="margin-top: 30px; width: 100px;height: 50px"> Confirm</button>
+<div id="msg" style="margin-top: 30px; font-size: 30px"></div>
+<script>
+    function tinhToan() {
+        let numberA = parseFloat(document.getElementById("numbera").value);
+        let numberB = parseFloat(document.getElementById("numberb").value);
+        let ketQua = -numberB / numberA;
+        document.getElementById("msg").innerHTML = `Đáp án là ${ketQua}`
+    }
+</script>
+</body>
+</html>

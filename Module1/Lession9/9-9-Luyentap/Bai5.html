@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5</title>
+</head>
+<body>
+<script>
+  let kiemTra = parseInt(prompt("Nhập điểm bài kiểm tra"));
+  let giuaKy = parseInt(prompt("Nhập điểm thi giữa kỳ"));
+  let cuoiKy = parseInt(prompt("Nhập điểm thi cuối kỳ"));
+  let tongDiem = kiemTra + giuaKy + cuoiKy;
+  if (tongDiem >= 8) {
+    alert("Học sinh khá");
+  } else if (tongDiem >= 5) {
+    alert("Học sinh trung bình");
+  } else {
+    alert("Học sinh yếu");
+  }
+</script>
+</body>
+</html>

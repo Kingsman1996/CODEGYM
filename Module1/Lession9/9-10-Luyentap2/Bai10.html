@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 10</title>
+</head>
+<body>
+<script>
+  let soDien = parseInt(prompt("Nhap so dien tieu thu"));
+  let thanhTien;
+  if (soDien <50) {
+    thanhTien = soDien*1806;
+  } else if (soDien < 100 ) {
+    thanhTien = soDien*1866;
+  } else if (soDien < 200 ) {
+    thanhTien = soDien*2167;
+  } else if (soDien < 300 ) {
+    thanhTien = soDien*2729;
+  } else if (soDien < 400 ) {
+    thanhTien = soDien*3050
+  } else{
+    thanhTien = soDien*3151;
+  }
+  alert(`Tong Tien: ${thanhTien}`)
+</script>
+</body>
+</html>

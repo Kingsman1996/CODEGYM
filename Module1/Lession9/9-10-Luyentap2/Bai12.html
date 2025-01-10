@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 12</title>
+</head>
+<style>
+    input{
+        height: 30px;
+        width: 150px;
+    }
+    button{
+        margin-top: 20px;
+        height: 40px;
+        width: 150px;
+    }
+</style>
+<body>
+<h1>Mời cụ nhập vào thông tin</h1>
+<h1>Số tiền vay (triệu đồng)</h1>
+<input type="number" name="" id="vay">
+<h1>Lãi suất (%)</h1>
+<input type="number" name="" id="laisuat">
+<h1>Số tháng vay</h1>
+<input type="number" name="" id="thang"> <br>
+<button onclick="tinhtoan()">Confirm</button>
+<h1>Số tiền lãi phải thanh toán <span id="msg"></span></h1>
+<script>
+    function tinhtoan(){
+        const vay = parseFloat(document.getElementById("vay").value);
+        const laisuat = parseFloat(document.getElementById("laisuat").value);
+        const thang = parseInt(document.getElementById("thang").value);
+        let ketQua = vay*Math.pow((laisuat/100)+1,thang);
+        document.getElementById("msg").innerHTML = `${ketQua.toFixed(2)*1000000} đồng ` ;
+    }
+</script>
+</body>
+</html>

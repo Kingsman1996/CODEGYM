@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 11</title>
+</head>
+<body>
+<script>
+    let thuNhap = parseInt(prompt("Thu nhap 1 thang cua ban la bao nhieu (don vi: trieu dong)"));
+    let thue = thuNhap - 11;
+    if (thue <= 0) {
+        alert(`Ban khong phai doi tuong nop thue`);
+    } else if (thue < 5) {
+        alert(`So thue ban phai nop la ${(thue * 5 / 100) * 1000000} dong`);
+    } else if (thue < 10) {
+        alert(`So thue ban phai nop la ${(thue * 10 / 100 - 0.25) * 1000000} dong`);
+    } else if (thue < 18) {
+        alert(`So thue ban phai nop la ${(thue * 15 / 100 - 0.75) * 1000000} dong`);
+    } else if (thue < 32) {
+        alert(`So thue ban phai nop la ${(thue * 20 / 100 - 1.65) * 1000000} dong`);
+    } else if (thue < 52) {
+        alert(`So thue ban phai nop la ${(thue * 25 / 100 - 3.25) * 1000000} dong`);
+    } else if (thue < 80) {
+        alert(`So thue ban phai nop la ${(thue * 30 / 100 - 5.85) * 1000000} dong`);
+    } else {
+        alert(`So thue ban phai nop la ${(thue * 35 / 100 - 9.85) * 1000000} dong`)
+    }
+</script>
+</body>
+</html>

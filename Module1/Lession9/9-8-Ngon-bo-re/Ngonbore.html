@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ngon bo re</title>
+</head>
+<style>
+    input {
+        width: 40px;
+    }
+
+    span {
+        font-size: 30px;
+    }
+
+    div {
+        margin: 20px 0;
+    }
+</style>
+<body>
+<div>Nice</div>
+<input onclick="check(niceId,fastId,cheapId)" id="nice" type="range" min="1" max="2" step="1" value="1"/>
+<div>Fast</div>
+<input onclick="check(fastId,niceId,cheapId)" id="fast" type="range" min="1" max="2" step="1"/>
+<div>Cheap</div>
+<input onclick="check(cheapId,niceId,fastId)" id="cheap" type="range" min="1" max="2" step="1"/>
+<script src="ngonbore.js"></script>
+</body>
+</html>
