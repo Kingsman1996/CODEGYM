@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nguyento</title>
+</head>
+<body>
+<h1>20 số nguyên tố đầu tiên</h1>
+<div id="numbers" style="margin-top: 20px;font-size: 24px"></div>
+<script>
+    let number = 3;
+    let i = 2;
+    let check = (number % i == 0);
+    let count = 0;
+    while (count < 21) {
+        while (i < number) {
+            if (!check) {
+                i++;
+            } else {
+                break;
+            }
+        }
+        number++;
+        document.getElementById("numbers").innerHTML += `${number}, `;
+    }
+</script>
+</body>
+</html>
