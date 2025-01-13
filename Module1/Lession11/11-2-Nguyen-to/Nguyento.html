@@ -8,20 +8,30 @@
 <h1>20 số nguyên tố đầu tiên</h1>
 <div id="numbers" style="margin-top: 20px;font-size: 24px"></div>
 <script>
-    let number = 3;
-    let i = 2;
-    let check = (number % i == 0);
     let count = 0;
-    while (count < 21) {
+
+    function check(number) {
+        let i = 2;
         while (i < number) {
-            if (!check) {
-                i++;
-            } else {
+            if (number % i == 0) {
                 break;
+            } else {
+                i++;
+            }
+            if (!document.getElementById("numbers").innerHTML.includes(`${number}`)) {
+                document.getElementById("numbers").innerHTML += `${number},`;
+                count++;
             }
         }
-        number++;
-        document.getElementById("numbers").innerHTML += `${number}, `;
+    }
+
+    for (let j = 3; j >= 3; j++) {
+        check(j);
+        if (count < 20) {
+            console.log(count);
+        } else {
+            break;
+        }
     }
 </script>
 </body>
