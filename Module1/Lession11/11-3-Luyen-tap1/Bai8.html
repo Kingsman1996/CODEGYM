@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 8</title>
+</head>
+<style>
+    button {
+        width: 100px;
+        height: 50px;
+    }
+</style>
+<body>
+<button onclick="batDau()">Chơi</button>
+<script>
+    let min, max, input, random;
+    let count = 0;
+
+    function batDau() {
+        min = parseInt(prompt("Nhập giá trị tối thiểu của vùng đoán"));
+        max = parseInt(prompt("Nhập giá trị tối đa của vùng đoán"));
+        random = Math.round(Math.random() * (max - min) + min);
+        console.log(random);
+        input = parseInt(prompt("Hãy đoán số trong vùng"));
+        while (count < 2) {
+            if (random === input) {
+                alert("Bạn đã đoán đúng");
+                break;
+            } else if (random > input) {
+                input = parseInt(prompt("Nhập số lớn hơn"))
+            } else {
+                input = parseInt(prompt("Nhập số nhỏ hơn"))
+            }
+            count++;
+        }
+        if (count == 2) {
+            alert("Hết lượt chơi")
+        }
+    }
+
+</script>
+</body>
+</html>

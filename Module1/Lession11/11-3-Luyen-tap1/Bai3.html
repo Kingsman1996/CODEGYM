@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<h1>20 số đầu tiên trong dãy fibonaci là </h1>
+<div id="msg" style="font-size: 30px"></div>
+<script>
+    const fibo = [1, 1]
+    let nextFibo;
+    let i = 0;
+    while (fibo.length < 20) {
+        nextFibo = fibo[i] + fibo[i + 1];
+        fibo.push(nextFibo);
+        i++;
+    }
+    document.getElementById("msg").innerHTML = `${fibo}`;
+</script>
+</body>
+</html>

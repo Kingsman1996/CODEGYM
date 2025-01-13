@@ -5,10 +5,11 @@
     <title>Nguyento</title>
 </head>
 <body>
-<h1>20 số nguyên tố đầu tiên</h1>
-<div id="numbers" style="margin-top: 20px;font-size: 24px"></div>
+<h1><span id="input"></span> số nguyên tố đầu tiên là</h1>
+<div id="numbers" style="margin-top: 20px;font-size: 24px"> 2,</div>
 <script>
-    let count = 0;
+    const input = parseInt(prompt("Mời nhập vào số lượng số nguyên tố cần hiển thị "))
+    let count = 1;
 
     function check(number) {
         let i = 2;
@@ -19,20 +20,27 @@
                 i++;
             }
             if (!document.getElementById("numbers").innerHTML.includes(`${number}`)) {
+                document.getElementById("input").innerHTML = `${input}`;
                 document.getElementById("numbers").innerHTML += `${number},`;
                 count++;
             }
         }
     }
 
-    for (let j = 3; j >= 3; j++) {
-        check(j);
-        if (count < 20) {
-            console.log(count);
-        } else {
-            break;
+    if (input === 1) {
+        document.getElementById("numbers").innerHTML = 2;
+    } else if (input > 1) {
+        for (let j = 3; j >= 3; j++) {
+            check(j);
+            if (count < input) {
+            } else {
+                break;
+            }
         }
+    } else {
+        alert("Nhập vào số lớn hơn 0")
     }
+
 </script>
 </body>
 </html>

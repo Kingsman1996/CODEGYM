@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5</title>
+</head>
+<body>
+<div id="msg" style="font-size: 30px"></div>
+<script>
+    const fibo = [1, 1]
+    let nextFibo;
+    let i = 0;
+    let sum = 2;
+    while (fibo.length < 20) {
+        nextFibo = fibo[i] + fibo[i + 1];
+        fibo.push(nextFibo);
+        i++;
+        sum += nextFibo;
+    }
+    document.getElementById("msg").innerHTML = `Tổng 20 số đầu tiên trong dãy fibo là ${sum}`;
+</script>
+</body>
+</html>

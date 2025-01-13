@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const fibo = [1, 1]
+    let nextFibo;
+    let i = 0;
+    while (i >= 0) {
+        nextFibo = fibo[i] + fibo[i + 1];
+        fibo.push(nextFibo);
+        if (nextFibo % 5 == 0) {
+            document.write(`Số fibonaci đầu tiên chia hết cho 5 là ${nextFibo}`);
+            break;
+        }
+        i++;
+    }
+</script>
+</body>
+</html>

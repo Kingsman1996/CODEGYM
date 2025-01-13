@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 6</title>
+</head>
+<body>
+<h1>Tổng 30 số tự nhiên đầu tiên chia hết cho 7 là</h1>
+<div id="msg" style="font-size: 30px"></div>
+<script>
+    let number = 7;
+    let count = 0;
+    let sum = 0;
+    while (count < 30) {
+        while (number % 7 == 0) {
+            sum += number;
+            count++;
+            number++;
+        }
+        number++;
+    }
+    document.getElementById("msg").innerHTML = sum;
+
+</script>
+</body>
+</html>
