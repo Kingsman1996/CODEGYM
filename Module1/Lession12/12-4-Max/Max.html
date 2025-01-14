@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Max</title>
+</head>
+<style>
+  body{
+    font-size: 40px;
+  }
+</style>
+<body>
+<script>
+  let numbers = [1,9,4,3,8,5,100,24,25,55,43]
+  let max = numbers[0];
+  let index = 0;
+  while (index < numbers.length) {
+    if (numbers[index] > max) {
+      max = numbers[index];
+    }
+    index++;
+  }
+  document.write(`${max} là giá trị lớn nhất trong mảng, tìm thấy ở vị trí thứ ${numbers.indexOf(max)}`);
+</script>
+</body>
+</html>
