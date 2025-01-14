@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<style>
+    body {
+        font-size: 40px;
+        display: flex;
+        gap: 50px;
+    }
+
+    span {
+        display: inline-block;
+        width: 20px;
+    }
+</style>
+<body>
+<div id="tamgiac1"></div>
+<div id="tamgiac2"></div>
+<script>
+    function veSao(howmany) {
+        for (let i = 1; i <= howmany; i++) {
+            document.getElementById(`tamgiac1`).innerHTML += `*`;
+        }
+        document.getElementById(`tamgiac1`).innerHTML += `<br>`;
+    }
+
+    for (let i = 1; i <= 5; i++) {
+        veSao(i)
+    }
+    document.getElementById(`tamgiac1`).innerHTML += `<br>`;
+    for (let i = 5; i >= 0; i--) {
+        veSao(i)
+    }
+
+    function veSao2(bang2, sao2) {
+        for (let j = 1; j <= bang2; j++) {
+            document.getElementById(`tamgiac2`).innerHTML += `<span><span/>`;
+        }
+        for (let i = 1; i <= sao2; i++) {
+            document.getElementById(`tamgiac2`).innerHTML += `*`;
+        }
+        document.getElementById(`tamgiac2`).innerHTML += `<br>`;
+    }
+
+    for (i = 4, j = 1; i >= 0; i--, j++) {
+        veSao2(i, j);
+    }
+    document.getElementById(`tamgiac2`).innerHTML += `<br>`;
+    for (i = 0, j = 5; i < 5; i++, j--) {
+        veSao2(i, j);
+    }
+</script>
+</body>
+</html>

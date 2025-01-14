@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5</title>
+</head>
+<body>
+<script>
+    let money = parseFloat(prompt("Nhập số tiền ban đầu (triệu đồng)"));
+    const laiSuat = parseFloat(prompt("Nhập % lãi suất"));
+    const thang = parseInt(prompt("Nhập số tháng vay"));
+    for (let i = 0; i < thang; i++) {
+        money *= (1 + laiSuat / 100)
+    }
+    const thanhToan = money * 1000000;
+    alert(`Số tiền phải thanh toán là ${thanhToan.toFixed(0)} đồng`);
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4</title>
+</head>
+<style>
+    span {
+        width: 20px;
+        display: inline-flex;
+        margin: 0 1px;
+        font-size: 40px;
+        align-items: center;
+        justify-content: center;
+    }
+    #rong, #dai1, #dai2 {
+        line-height: 20px;
+    }
+    #dai1{
+        margin-top: 30px;
+    }
+</style>
+<body>
+<div id="dai1"></div>
+<div id="rong"></div>
+<div id="dai2"></div>
+<script>
+    function chuNhat(dai, rong, divdai1, divrong, divdai2) {
+        for (let i = 1; i <= dai; i++) {
+            document.getElementById(divdai1).innerHTML += "<span>*</span>"
+        }
+        for (let i = 1; i <= rong; i++) {
+            document.getElementById(divrong).innerHTML += "<span>*</span>";
+            for (let i = 1; i <= dai - 2; i++) {
+                document.getElementById(divrong).innerHTML += "<span></span>"
+            }
+            document.getElementById(divrong).innerHTML += "<span>*</span> <br>";
+        }
+        for (let i = 1; i <= dai; i++) {
+            document.getElementById(divdai2).innerHTML += "<span>*</span>"
+        }
+    }
+
+    chuNhat(25, 7, "dai1", "rong", "dai2");
+</script>
+</body>
+</html>

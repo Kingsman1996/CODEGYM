@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+<h1><span id="input"></span> số đầu tiên trong dãy fibonaci là </h1>
+<div id="msg" style="font-size: 30px"></div>
+<script>
+  const input = parseInt(prompt("Nhập vào số lượng phần tử dãy fibo muốn in"));
+  const fibo = [1, 1];
+  let nextFibo;
+  let i = 0;
+  while (fibo.length < input) {
+    nextFibo = fibo[i] + fibo[i + 1];
+    fibo.push(nextFibo);
+    i++;
+  }
+  document.getElementById("input").innerHTML = input;
+  document.getElementById("msg").innerHTML = `${fibo}`;
+</script>
+</body>
+</html>
