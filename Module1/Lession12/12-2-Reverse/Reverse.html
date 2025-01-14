@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reverse</title>
+</head>
+<body style="font-size: 40px;">
+<script>
+    let numbers = [1, 3, 4, 6, 15, 10, 9, 11, 12,];
+    let numbersClone = [];
+    for (let index = 0; index < numbers.length; index++) {
+        numbersClone[index] = numbers[numbers.length - 1 - index];
+    }
+    document.write(`Mảng ban đầu ${numbers}<br>`);
+    document.write(`Mảng sau khi đảo ngược ${numbersClone}`);
+</script>
+</body>
+</html>
