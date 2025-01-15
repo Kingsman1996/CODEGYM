@@ -17,7 +17,6 @@ function drawCaro() {
     }
 }
 
-
 function changeValue() {
     rowInput = parseInt(prompt("Enter row")) - 1;
     colInput = parseInt(prompt("Enter column ")) - 1;

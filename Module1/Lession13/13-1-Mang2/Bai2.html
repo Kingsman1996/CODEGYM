@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+<script>
+    let input = prompt("Enter a long number").toString()
+    let array = input.split('')
+    let array2 = []
+
+    for (let i = 0; i < array.length; i++) {
+        array2.push(array[i])
+        if (array[i] % 2 == 0 && array[i + 1] % 2 == 0) {
+            array2.push("-")
+        }
+    }
+    alert(array2.join(""))
+</script>
+</body>
+</html>

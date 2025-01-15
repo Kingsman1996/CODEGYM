@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<script>
+    let input = prompt("Nhập vào chuỗi ký tự").toString()
+    let array = input.split("")
+    let each = array[0]
+    for (let i = 0; i < array.length; i++) {
+        each = array[i]
+        if (each === each.toLowerCase()) {
+            array[i] = array[i].toUpperCase()
+        } else if (each === each.toUpperCase()) {
+            array[i] = array[i].toLowerCase()
+        }
+    }
+    alert(array.join(""))
+</script>
+</body>
+</html>
