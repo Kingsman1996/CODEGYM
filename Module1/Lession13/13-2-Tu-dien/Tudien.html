@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu dien</title>
+</head>
+<style>
+    input {
+        margin: 20px 0;
+        width: 400px;
+        height: 50px;
+        font-size: 20px;
+    }
+</style>
+<body>
+<h1>Mời cụ nhập vào từ cần tra cứu</h1>
+<input type="text" id="eng"> <br>
+<button onclick="check()">Translate</button>
+<script>
+    const engArray = ["class", "teacher", "human", "food", "student"]
+    const vietArray = ["Lớp", "Giáo viên", "Con người", "Thực phẩm", "Học sinh"]
+    let input = document.getElementById("eng")
+
+    function check() {
+        for (let i = 0; i < engArray.length; i++) {
+            if (engArray[i] === input.value) {
+                input.value = vietArray[i]
+                break;
+            } else if (i == engArray.length - 1) {
+                input.value = "Không tìm thấy!"
+            }
+        }
+    }
+</script>
+</body>
+</html>
