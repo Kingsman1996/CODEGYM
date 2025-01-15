@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 8</title>
+</head>
+<body>
+<script>
+    let array = [];
+    for (let i = 0; i <= 9; i++) {
+        array[i] = parseInt(prompt(`Nhập vào phần tử thứ ${i + 1}`));
+    }
+    array.sort((a, b) => b - a)
+    alert(`Mảng sau khi sắp xếp là ${array}`);
+</script>
+</body>
+</html>

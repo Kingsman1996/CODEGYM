@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 9</title>
+</head>
+<body>
+<script>
+    let arrayA = [];
+    let arrayB = [];
+    for (let i = 0; i <= 9; i++) {
+        arrayA[i] = parseInt(prompt(`Nhập vào phần tử thứ ${i + 1} của mảng a`));
+        arrayB[i] = parseInt(prompt(`Nhập vào phần tử thú ${i + 1} của mảng b`))
+    }
+    let arrayC = arrayA.concat(arrayB);
+    alert(`Kết quả nối 2 mảng a,b là ${arrayC}`);
+</script>
+</body>
+</html>

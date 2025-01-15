@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<style>
+    button {
+        width: 100px;
+        height: 50px;
+    }
+</style>
+<body>
+<h1>Bấm bắt đầu để thêm số vào mảng</h1>
+<button onclick="add()">Add</button>
+<script>
+    function add() {
+        let array = [];
+        let count = [];
+        for (let i = 0; i < 10; i++) {
+            array[i] = parseInt(prompt(`Nhập số thứ ${i + 1}`));
+            if (array[i] >= 10) {
+                count.push(array[i]);
+            }
+        }
+        alert(`Có ${count.length} số lớn hơn hoặc bằng 10`)
+    }
+</script>
+</body>
+</html>

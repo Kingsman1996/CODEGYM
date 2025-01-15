@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<style>
+    button {
+        width: 100px;
+        height: 50px;
+    }
+</style>
+<body>
+<h1>Bấm bắt đầu để tạo mảng</h1>
+<button onclick="begin()"> Bắt đầu</button>
+<script>
+    function begin() {
+        let array = [];
+        let sum = 0;
+        let length = parseInt(prompt("Nhập vào số lượng phần tử"))
+        for (let i = 0; i < length; i++) {
+            array[i] = parseInt(prompt(`Nhập vào phần tử thứ ${i + 1}`))
+            sum += array[i];
+        }
+        let max = array[0]
+        for (let j = 0; j < length; j++) {
+            if (array[j] > max) {
+                max = array[j]
+            }
+        }
+        alert(`Giá trị lớn nhất trong mảng là ${max}, giá trị trung bình là ${sum / array.length}`)
+    }
+</script>
+</body>
+</html>

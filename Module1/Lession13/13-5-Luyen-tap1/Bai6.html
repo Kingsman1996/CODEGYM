@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 6</title>
+</head>
+<body>
+<script>
+    let array = [];
+    for (let i = 0; i <= 9; i++) {
+        array[i] = parseInt(prompt(`Nhập vào phần tử thứ ${i + 1}`));
+    }
+    const number = parseInt(prompt("Nhập vào số nguyên V"));
+    for (let i = 0; i <= 9; i++) {
+        if (number == array[i]) {
+            alert(`${number} is in the array`)
+            break;
+        } else {
+            if (i == 9) {
+                alert(`${number} is not in the array`)
+            }
+        }
+    }
+</script>
+</body>
+</html>

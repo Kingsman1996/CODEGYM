@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<style>
+    button {
+        width: 100px;
+        height: 50px;
+    }
+</style>
+<body>
+<h1>Bấm bắt đầu để thêm số vào mảng</h1>
+<button onclick="add()">Add</button>
+<script>
+    function add() {
+        let array = [];
+        let count = [];
+        for (i = 0; i < 10; i++) {
+            array[i] = parseInt(prompt(`Nhập số thứ ${i + 1}`));
+            for (j = 0; j < i; j++) {
+                if (array[j] == array[i]) {
+                    alert(`Đã tồn tại số ${array[j]} trong mảng`)
+                    count = 1;
+                    break;
+                }
+            }
+            if (count == 1) {
+                break;
+            }
+        }
+        let max = array[0];
+        let index = 0;
+        for (j = 0; j < 10; j++) {
+            if (array[j] > max) {
+                max = array[j];
+                index = j + 1;
+            }
+        }
+        alert(`Số lớn nhất là ${max} có vị trí thứ ${index}`)
+    }
+
+</script>
+</body>
+</html>

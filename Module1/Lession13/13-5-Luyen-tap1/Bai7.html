@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 7</title>
+</head>
+<body>
+<script>
+    let array = [];
+    for (let i = 0; i <= 9; i++) {
+        array[i] = parseInt(prompt(`Nhập vào phần tử thứ ${i + 1}`));
+    }
+    const number = parseInt(prompt("Nhập vào số nguyên V"));
+    for (let i = 0; i <= 9; i++) {
+        if (number == array[i]) {
+            array.splice(i, 1);
+            i--;
+        }
+    }
+    alert(`Mảng sau khi đã xóa ${number} là ${array}`);
+</script>
+</body>
+</html>
