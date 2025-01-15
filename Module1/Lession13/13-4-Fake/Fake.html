@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake</title>
+</head>
+<style>
+    textarea {
+        padding: 10px;
+        font-size: 30px;
+    }
+</style>
+<body>
+<h1>Type something slowly</h1>
+<textarea id="input" rows="5" cols="50" placeholder="Type something here"></textarea>
+<p></p>
+<script>
+    const stringGoc = "Mờicụnhậpdòngkhác"
+    const array = stringGoc.split("");
+    let textId = document.getElementById('input');
+    let i = 0
+    let take = [];
+    textId.addEventListener("input", function () {
+        textId.value = ""
+        if (i < array.length) {
+            take.push(array[i])
+            textId.value += take.join("");
+            i++;
+        } else {
+            textId.value = ""
+            take = [];
+            i = 0;
+        }
+        console.log(take);
+    })
+</script>
+</body>
+</html>
