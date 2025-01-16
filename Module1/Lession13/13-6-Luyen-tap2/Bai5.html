@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5</title>
+</head>
+<body>
+<script>
+    const chuoiA = prompt("Nhập vào chuỗi a")
+    const chuoiB = prompt("Nhập vào chuỗi b")
+    const arrA = chuoiA.split('')
+    const arrB = chuoiB.split('')
+    for (let i = 0; i < arrA.length; i++) {
+        if (arrA[i] !== arrB[i]) {
+            alert("2 chuỗi khác nhau")
+            break;
+        } else {
+            if (i == arrA.length - 1) {
+                alert("2 chuỗi giống nhau")
+            }
+        }
+    }
+</script>
+</body>
+</html>
