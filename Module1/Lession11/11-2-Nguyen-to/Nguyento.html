@@ -9,34 +9,36 @@
 <div id="numbers" style="margin-top: 20px;font-size: 24px"> 2,</div>
 <script>
     const input = parseInt(prompt("Mời nhập vào số lượng số nguyên tố cần hiển thị "))
-    let count = 1;
+    let output = [];
 
     function check(number) {
-        let i = 2;
-        while (i < number) {
-            if (number % i == 0) {
-                break;
-            } else {
-                i++;
+        if (number === 1) {
+            return false
+        }
+        if (number === 2) {
+            output.push(number)
+            return true
+        }
+        if (number >= 3) {
+            for (let i = 2; i < number; i++) {
+                if (number % i === 0) {
+                    return false;
+                }
             }
-            if (!document.getElementById("numbers").innerHTML.includes(`${number}`)) {
-                document.getElementById("input").innerHTML = `${input}`;
-                document.getElementById("numbers").innerHTML += `${number},`;
-                count++;
-            }
+            output.push(number)
         }
     }
 
     if (input === 1) {
-        document.getElementById("numbers").innerHTML = 2;
+        document.getElementById("numbers").innerHTML = "2";
     } else if (input > 1) {
-        for (let j = 3; j >= 3; j++) {
-            check(j);
-            if (count < input) {
-            } else {
-                break;
-            }
+        let i = 2;
+        while (output.length < input) {
+            check(i);
+            i++;
         }
+        document.getElementById("input").innerHTML = `${input}`
+        document.getElementById("numbers").innerHTML = `${output}`
     } else {
         alert("Nhập vào số lớn hơn 0")
     }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So nguyen to</title>
+</head>
+<style>
+    div {
+        width: 50%;
+        display: flex;
+        overflow: auto;
+    }
+</style>
+<body>
+<h1>Tất cả các số nguyên tố nhỏ hơn 10000</h1>
+<div id="msg"></div>
+<script>
+    let output = [];
+
+    function check(number) {
+        if (number === 1) {
+            return false
+        }
+        if (number === 2) {
+            output.push(number)
+        }
+        if (number >= 3) {
+            for (let i = 2; i < number; i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+            output.push(number)
+        }
+    }
+
+    function maxPrime(limit) {
+        for (let j = 2; j < limit; j++) {
+            check(j)
+        }
+    }
+
+    maxPrime(10000)
+    document.getElementById("msg").innerHTML = `${output}`
+</script>
+</body>
+</html>
