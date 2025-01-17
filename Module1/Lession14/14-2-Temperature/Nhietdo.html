@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhiet do</title>
+</head>
+<style>
+    input {
+        height: 50px;
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 30px;
+    }
+</style>
+<body>
+<h1>Temperature converter</h1>
+<input type="number" placeholder="Type Fahrenheit here" id="temp" oninput="convertTemp()" onchange="convertTemp()">
+<p id="msg"></p>
+<script>
+    let inputTemp = document.getElementById("temp")
+    const showResult = document.getElementById("msg")
+
+    function convertTemp() {
+        if (inputTemp.value == "") {
+            showResult.innerHTML = ""
+        } else {
+            outputTemp = (parseFloat(inputTemp.value) - 32) / 1.8
+            showResult.innerHTML = `${outputTemp}`
+            return outputTemp;
+        }
+    }
+</script>
+</body>
+</html>
