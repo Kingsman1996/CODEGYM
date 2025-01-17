@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+<script>
+    const loveOrNot = confirm("Cụ chọn yêu hay không yêu?");
+    let msg = ""
+    function thongBao(check){
+        if (check){
+            msg = "Già rồi nghỉ thôi"
+        }
+        else {
+            msg = "Chúc cụ khỏe"
+        }
+    }
+    thongBao(loveOrNot);
+    alert(msg)
+</script>
+</body>
+</html>
