@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5</title>
+</head>
+<body onload="findStar()">
+<script>
+    const stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
+    const constellations = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+
+    function findStar() {
+        const input = prompt("Nhập vào tên ngôi sao")
+        for (let i = 0; i < stars.length; i++) {
+            if (input === stars[i]) {
+                alert(`Chòm sao tương ứng là ${constellations[i]}`)
+                return;
+            }
+        }
+        alert("Không tìm thấy sao")
+    }
+</script>
+</body>
+</html>
