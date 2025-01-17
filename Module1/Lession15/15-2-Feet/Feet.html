@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feet metter</title>
+</head>
+<style>
+    button {
+        width: 100px;
+        height: 50px;
+    }
+
+    input {
+        font-size: 30px;
+        margin: 30px 0;
+    }
+
+    #msg {
+        width: 400px;
+        font-size: 40px;
+        height: 50px;
+        margin: 30px 0;
+    }
+</style>
+<body>
+<h1>Input and click convert to see result</h1>
+<input type="number" id="length"> <br>
+<button onclick="convertMetter()">Convert form feet to metter</button>
+<button onclick="convertFeet()">Convert from metter to feet</button>
+<div id="msg"></div>
+<script>
+    let how = document.getElementById("length");
+
+    function convertMetter() {
+        document.getElementById("msg").innerHTML = `${how.value} feet = ${how.value * 0.305} metter`
+    }
+
+    function convertFeet() {
+        document.getElementById("msg").innerHTML = `${how.value} metter = ${how.value * 3.279} feet`
+    }
+</script>
+</body>
+</html>
