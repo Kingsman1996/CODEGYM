@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 8</title>
+</head>
+<body>
+<script>
+    const input = prompt("Nhập vào độ dài mảng");
+
+    function checkNumber(what) {
+        while ((isNaN(Number(what)) && what.trim() !== '')) {
+            what = prompt(`${what} không phải là 1 số, nhập lại số`)
+        }
+        return parseInt(what)
+    }
+
+    const length = checkNumber(input)
+    let arr = [];
+    for (let j = 0; j < length; j++) {
+        arr[j] = checkNumber(prompt(`Nhập vào phần tử thứ ${j + 1}`))
+    }
+
+    function reverseArray(array) {
+        array.reverse()
+        return array
+    }
+
+    alert(`Mảng sau khi đảo ngược là ${reverseArray(arr)}`)
+
+
+</script>
+</body>
+</html>

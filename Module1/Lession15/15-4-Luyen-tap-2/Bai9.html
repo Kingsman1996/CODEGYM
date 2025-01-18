@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 9</title>
+</head>
+<style>
+    body {
+        font-size: 40px;
+    }
+</style>
+<body>
+<script>
+    const inputLength = prompt("Nhập vào độ dài mảng");
+
+    function checkNumber(what) {
+        while ((isNaN(Number(what)) && what.trim() !== '')) {
+            what = prompt(`${what} không phải là 1 số, nhập lại số`)
+        }
+        return parseInt(what)
+    }
+
+    const length = checkNumber(inputLength)
+    let arr = [];
+    for (let j = 0; j < length; j++) {
+        arr[j] = prompt(`Nhập vào phần tử thứ ${j + 1}`)
+    }
+
+    function findChar(char) {
+        let count = 0;
+        let found = false;
+        for (let i = 0; i < length; i++) {
+            if (arr[i] === char) {
+                count++;
+                found = true
+            }
+        }
+        return found ? count : -1;
+    }
+
+    const inputChar = prompt("Nhập vào ký tự bất kỳ")
+    document.write(findChar(inputChar))
+</script>
+</body>
+</html>

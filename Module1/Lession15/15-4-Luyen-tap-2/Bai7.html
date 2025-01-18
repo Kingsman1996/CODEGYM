@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 7</title>
+</head>
+<body>
+<script>
+    const result = [];
+
+    const firstNumber = prompt(`Nhập vào số đầu tiên`)
+    const checkNumber = function (what) {
+        const notNumber = (isNaN(Number(what)) && what.trim() !== '')
+        if (notNumber) {
+            what = prompt(`${what} không phải là 1 số, nhập lại số`)
+            checkNumber(what)
+            return false
+        }
+        result.push(what)
+        return true;
+    }
+    checkNumber(firstNumber)
+    const secondNumber = prompt("Nhập vào số thứ 2")
+    checkNumber(secondNumber)
+
+    function swapNumbers(arr) {
+       arr.reverse()
+        return arr
+    }
+
+    swapNumbers(result)
+    alert(`Đã đổi chỗ 2 số thành ${result}`)
+
+</script>
+</body>
+</html>

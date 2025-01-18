@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4</title>
+</head>
+<body>
+<script>
+    const input = prompt("Nhập vào ký tự bất kỳ")
+
+    function checkNumber(what) {
+        if (!isNaN(Number(what)) && what.trim() !== '') {
+            alert(`${input} là 1 số`)
+        } else {
+            alert(`${input} không phải là 1 số`)
+        }
+    }
+    checkNumber(input)
+</script>
+</body>
+</html>

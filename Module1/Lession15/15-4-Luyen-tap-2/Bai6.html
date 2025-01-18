@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 6</title>
+</head>
+<body>
+<script>
+    const input = prompt("Nhập vào số nguyên")
+
+    function checkNumber(number) {
+        if (!isNaN(Number(number)) && number.trim() !== '') {
+            if (number > 0) {
+                alert(`${number} là số nguyên dương`)
+            } else {
+                alert(`${number} không là số dương`)
+            }
+        } else {
+            alert(`${input} không phải là 1 số`)
+        }
+    }
+
+    checkNumber(input)
+</script>
+</body>
+</html>

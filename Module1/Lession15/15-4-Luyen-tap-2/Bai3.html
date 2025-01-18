@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<script>
+    const input = parseInt(prompt("Nhập vào số a"))
+
+    function calculate(number) {
+        let result = 1
+        for (let i = 2; i <= number; i++) {
+            result *= i
+        }
+        alert(`${input} giai thừa bằng ${result}`)
+    }
+
+    calculate(input)
+</script>
+</body>
+</html>
