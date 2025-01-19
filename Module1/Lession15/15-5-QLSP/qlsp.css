@@ -1,3 +1,7 @@
+body {
+    font-family: Arial, Helvetica, sans-serif
+}
+
 button {
     display: inline-flex;
     align-items: center;
@@ -10,10 +14,6 @@ button {
     border-radius: 5px;
 }
 
-#products {
-    width: fit-content;
-}
-
 span {
     display: inline-block;
     width: 200px;
@@ -22,4 +22,13 @@ span {
 
 #amount {
     color: #d61b06;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+}
+
+tbody tr:nth-child(even) {
+    background-color: whitesmoke;
 }

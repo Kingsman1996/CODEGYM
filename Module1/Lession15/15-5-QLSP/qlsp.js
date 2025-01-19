@@ -6,7 +6,7 @@ let products = ["Sony", "Nokia", "Samsung"]
 
 function displayProducts() {
     for (let i = 0; i < products.length; i++) {
-        productsDiv.innerHTML += `<span>${products[i]}</span>${edit}${del}<br>`
+        productsDiv.innerHTML += `<tr><td><span>${products[i]}</span>${edit}${del}</td></tr>`
     }
     amountDiv.innerHTML = `${products.length} sản phẩm`
 }

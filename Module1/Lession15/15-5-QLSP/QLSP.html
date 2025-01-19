@@ -10,9 +10,17 @@
 <button onclick="addProduct()">Thêm</button>
 <br>
 <h2>Danh sách sản phẩm</h2>
-<span style="font-weight: bold">Tên sản phẩm</span>
-<span id="amount">0 sản phẩm</span>
-<div id="products"></div>
+<table>
+    <thead>
+    <tr class="head">
+        <th>Tên sản phẩm</th>
+        <th id="amount">0 sản phẩm</th>
+    </tr>
+    </thead>
+    <tbody id="products">
+    <tr></tr>
+    </tbody>
+</table>
 <script src="qlsp.js"></script>
 </body>
 </html>
