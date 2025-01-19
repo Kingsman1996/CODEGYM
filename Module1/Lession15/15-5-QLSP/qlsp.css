@@ -1,0 +1,25 @@
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    margin: 10px 10px;
+    font-size: 20px;
+    background-color: cornflowerblue;
+    border: none;
+    border-radius: 5px;
+}
+
+#products {
+    width: fit-content;
+}
+
+span {
+    display: inline-block;
+    width: 200px;
+    font-size: 20px;
+}
+
+#amount {
+    color: #d61b06;
+}
