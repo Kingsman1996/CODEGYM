@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doi xung</title>
+</head>
+<body>
+<script>
+    let inputString = prompt("Nhập vào chuỗi cần kiểm tra")
+    let array = [];
+
+    function checkInput(string) {
+        if (string.length < 2) {
+            string = prompt("Chuỗi phải nhiều hơn 1 ký tự, nhập lại chuỗi")
+            checkInput(string)
+            return
+        }
+        array = string.split("")
+        return array;
+    }
+
+    checkInput(inputString)
+    document.write(array)
+
+    function isPalindrome(arr) {
+        if (arr.length < 2) {
+            return true;
+        }
+        if (arr[0] === arr[arr.length - 1]) {
+            arr.pop()
+            arr.shift()
+            isPalindrome(arr)
+        }
+        return false
+    }
+
+    if (isPalindrome(array)) {
+        alert("Chuỗi là chuỗi đối xứng")
+    } else {
+        alert("Chuỗi không đối xứng")
+    }
+</script>
+</body>
+</html>
