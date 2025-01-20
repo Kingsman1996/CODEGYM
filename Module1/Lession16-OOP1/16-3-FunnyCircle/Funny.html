@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funny</title>
+</head>
+<style>
+    body {
+        overflow: hidden;
+        margin: 0;
+    }
+</style>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+    const canvas = document.getElementById("canvas")
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const ctx = canvas.getContext("2d")
+
+    class Circle {
+        constructor() {
+            this.x = ((Math.random() + 1) * window.innerWidth / 3);
+            this.y = ((Math.random() + 1) * window.innerHeight / 4);
+            this.radius = (Math.random() * 60);
+            this.directx = Math.random() + 2
+            this.directy = Math.random() + 2
+            this.color = randomColor()
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = this.color
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        changeDirect() {
+            this.x += this.directx;
+            this.y += this.directy;
+            if (this.x + this.radius >= canvas.width || this.x - this.radius <= 0) {
+                this.directx = -this.directx
+            }
+            if (this.y + this.radius >= canvas.height || this.y - this.radius <= 0) {
+                this.directy = -this.directy
+            }
+        }
+    }
+
+    function randomColor() {
+        const r = Math.floor(Math.random() * 256)
+        const g = Math.floor(Math.random() * 256)
+        const b = Math.floor(Math.random() * 256)
+        return `rgb(${r},${g},${b})`
+    }
+
+    const circleArray = [];
+    for (let i = 0; i < 30; i++) {
+        circleArray[i] = new Circle()
+        circleArray[i].draw()
+    }
+
+    function animateCircles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        for (const item of circleArray) {
+            item.changeDirect()
+            item.draw()
+        }
+        requestAnimationFrame(animateCircles)
+    }
+
+    animateCircles()
+</script>
+</body>
+</html>
