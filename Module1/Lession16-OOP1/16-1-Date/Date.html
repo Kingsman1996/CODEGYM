@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date</title>
+</head>
+<body>
+<script>
+    class Date {
+        constructor(doiso1, doiso2, doiso3) {
+            this.day = doiso1;
+            this.month = doiso2;
+            this.year = doiso3;
+
+        }
+
+        getDay() {
+            document.write(this.day);
+        }
+
+        getMonth() {
+            document.write(this.month);
+        }
+
+        getYear() {
+            document.write(this.year)
+        }
+
+        setDay(doiso) {
+            this.day = doiso;
+        }
+
+        setMonth(doiso) {
+            this.month = doiso
+        }
+
+        setYear(doiso) {
+            this.year = doiso
+        }
+
+        setfullDay(doiso1, doiso2, doiso3) {
+            this.day = doiso1;
+            this.month = doiso2;
+            this.year = doiso3;
+        }
+
+        fullDay() {
+            document.write(`${this.day}/${this.month}/${this.year}`)
+        }
+    }
+
+    const valentine = new Date(14, 02, 2025)
+    valentine.getDay()
+    document.write("<br>")
+    valentine.getMonth()
+    document.write("<br>")
+    valentine.getYear()
+    document.write("<br>")
+    valentine.fullDay()
+    document.write("<br>")
+    valentine.setfullDay(27, 07, 2020)
+    document.write("Valentine changed to ")
+    valentine.fullDay()
+</script>
+</body>
+</html>
