@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temp</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(nhiet) {
+            this.nhiet = nhiet
+        }
+
+        toF() {
+            const fah = this.nhiet * 9 / 5 + 32
+            return document.write(`Độ F: ${fah} <br>`)
+        }
+        toK(){
+            const kel = this.nhiet + 273.15
+            return document.write(`Độ K: ${kel}`)
+        }
+    }
+    const cel = new Temperature(25)
+    cel.toF()
+    cel.toK()
+</script>
+</body>
+</html>
