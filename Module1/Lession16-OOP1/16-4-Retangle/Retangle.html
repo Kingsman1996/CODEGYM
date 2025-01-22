@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retangle</title>
+</head>
+<style>
+    canvas {
+        border: 1px solid;
+    }
+</style>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+    class Rectangle {
+        constructor(dai, rong, color) {
+            this.dai = dai;
+            this.rong = rong
+            this.color = color
+        }
+
+        chuVi() {
+            document.write(`<br> Chu vi hình chữ nhật: ${(this.rong + this.dai) * 2}`)
+        }
+
+        dienTich() {
+            document.write(`<br> Diện tích hình chữ nhật: ${this.dai * this.rong}`)
+        }
+
+
+        draw() {
+            const canvas = document.getElementById("canvas")
+            const ctx = canvas.getContext("2d")
+            ctx.fillStyle = this.color;
+            ctx.fillRect(40, 40, this.dai, this.rong);
+        }
+
+        allMethod() {
+            this.draw()
+            this.chuVi()
+            this.dienTich()
+        }
+    }
+
+    const chunhat1 = new Rectangle(200, 100, "red")
+    chunhat1.allMethod()
+</script>
+</body>
+</html>
