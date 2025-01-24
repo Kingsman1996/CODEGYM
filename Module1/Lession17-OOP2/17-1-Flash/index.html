@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flash</title>
+</head>
+<body>
+<script>
+    class Battery {
+
+        setEnergy(energy) {
+            this.energy = energy;
+        };
+
+        getEnergy() {
+            return this.energy;
+        };
+
+        decreaseEnergy() {
+            if (this.energy > 0) {
+                this.energy--;
+            }
+        }
+    };
+
+    class FlashLamp {
+
+        updateBattery() {
+            this.battery = battery.energy;
+        };
+
+        getBatteryInfo() {
+            return this.battery;
+        };
+
+        light() {
+            if (this.status) {
+                document.write("Lighting" + "<br>");
+            } else {
+                document.write("Not lighting" + "<br>");
+            }
+        };
+
+        turnOn() {
+            this.status = true;
+        };
+
+        turnOff() {
+            this.status = false;
+        }
+    };
+    const battery = new Battery();
+    battery.setEnergy(99);
+    const flashLamp = new FlashLamp();
+    flashLamp.updateBattery();
+    document.write("Battery info:" + flashLamp.getBatteryInfo() + "<br/>");
+    flashLamp.turnOn();
+    flashLamp.light();
+    flashLamp.turnOff();
+    flashLamp.light()
+</script>
+</body>
+</html>
