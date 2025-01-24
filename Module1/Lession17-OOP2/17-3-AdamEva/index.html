@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam Eva</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor() {
+            this.weight = 10
+        }
+
+        weightInfo() {
+            return this.weight;
+        }
+
+        decrease() {
+            this.weight--
+        }
+
+        isEmpty() {
+            return this.weight === 0;
+        }
+    }
+
+    class Human {
+        constructor(ten, gioitinh, cannang) {
+            this.ten = ten
+            this.gioitinh = gioitinh
+            this.cannang = cannang
+        }
+
+        checkApple(tenquatao) {
+            if (tenquatao.isEmpty()) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+        eat(tenquatao) {
+            if (!this.checkApple(tenquatao)) {
+                tenquatao.decrease()
+                this.cannang++
+                document.write(`${this.ten} đã ăn 1 miếng táo <br>`)
+                document.write(`${this.ten} đã tăng cân lên ${this.cannang}<br>`)
+                document.write(`Táo còn lại ${tenquatao.weight} <br>`)
+            } else {
+                alert("Hết táo")
+                return
+            }
+        }
+
+        say(string) {
+            document.write(`${this.ten} nói ${string}`)
+        }
+
+        getName(tennguoi) {
+            return tennguoi.ten
+        }
+
+        getWeight(tennguoi) {
+            return tennguoi.cannang
+        }
+
+        getGender(tennguoi) {
+            return tennguoi.gioitinh
+        }
+    }
+
+    const adam = new Human("Adam", "Male", 60)
+    const eva = new Human("Eva", "Female", 50)
+    const tao1 = new Apple()
+    for (let i = 0; i < 6; i++) {
+        adam.eat(tao1)
+    }
+    for (let i = 0; i < 5; i++) {
+        eva.eat(tao1)
+    }
+</script>
+</body>
+</html>
