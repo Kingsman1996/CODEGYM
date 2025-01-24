@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Switch</title>
+</head>
+<body>
+<script>
+    class Switch {
+        constructor() {
+            this.status = false
+        }
+
+        switchButton(tenbongden) {
+            if (this.status === true) {
+                this.status = false
+                tenbongden.status = false
+            } else {
+                this.status = true
+                tenbongden.status = true
+            }
+        }
+
+        connect(tenbongden) {
+            tenbongden.connectedSwitch = true
+        }
+    }
+
+    class BongDen {
+        constructor() {
+            this.status = false
+            this.connectedSwitch = false
+        }
+
+        showStatus() {
+            if (this.connectedSwitch) {
+                if (!this.status) {
+                    document.write(`Bóng đèn đang bật <br>`)
+                } else {
+                    document.write(`Bóng đèn đang tắt <br>`)
+                }
+            }
+        }
+    }
+
+    const congtac = new Switch()
+    const bongden = new BongDen()
+    congtac.connect(bongden)
+    for (let i = 0; i < 10; i++) {
+        congtac.switchButton(bongden)
+        bongden.showStatus()
+    }
+
+</script>
+</body>
+</html>
