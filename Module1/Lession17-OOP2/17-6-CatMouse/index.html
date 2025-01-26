@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat mouse</title>
+</head>
+<body>
+<script>
+    class Rat {
+        constructor(ten, khoiluong, tocdo, trangthai) {
+            this.ten = ten;
+            this.khoiluong = khoiluong;
+            this.tocdo = tocdo;
+            this.trangthai = trangthai;
+        }
+
+        makeSound() {
+            if (this.trangthai === "Sống") {
+                document.write(`${this.ten} kêu chít <br>`)
+            } else {
+                document.write(`${this.ten} đã chết <br>`)
+            }
+        }
+    }
+
+    class Cat {
+        constructor(ten, khoiluong, tocdo) {
+            this.ten = ten;
+            this.khoiluong = khoiluong;
+            this.tocdo = tocdo;
+            this.count = 0
+        }
+
+        makeSound() {
+            document.write(`${this.ten} kêu meo meo<br>`)
+        }
+
+        catchRat(which) {
+            switch (this.count) {
+                case 0:
+                    if (this.tocdo > which.tocdo) {
+                        this.count = 1
+                        document.write(`${this.ten} đã vồ được đồng chí ${which.ten}<br>`)
+                        rats.push(which)
+                        return true
+                    } else {
+                        document.write(`${this.ten} không vờn được ${which.ten}<br>`)
+                        return false
+                    }
+                    break;
+                default:
+                    document.write(`Không thể bắt ${which.ten} khi đang bắt 1 chuột khác<br>`)
+                    return false
+            }
+        }
+
+        eatRat() {
+            switch (rats[rats.length - 1].trangthai) {
+                case "Sống":
+                    this.khoiluong += rats[rats.length - 1].khoiluong
+                    document.write(`${this.ten} đã ăn ${rats[rats.length - 1].ten}, tăng khối lượng lên ${this.khoiluong}<br>`)
+                    this.count = 0
+                    rats[rats.length - 1].trangthai = "Bị ăn"
+                    break;
+                case "Chết":
+                    document.write(`${rats[rats.length - 1].ten} đã chết không thèm ăn<br>`)
+                    break;
+                default:
+                    document.write(`${this.ten} đã ăn ${rats[rats.length - 1].ten} rồi <br>`)
+            }
+        }
+    }
+
+    const jerry = new Rat("Jerry", 10, 10, "Sống");
+    const mic = new Rat("Mickey", 10, 10, "Chết");
+    const tom = new Cat("Tom", 20, 15,)
+    const rats = []
+    jerry.makeSound()
+    mic.makeSound()
+    tom.makeSound()
+    tom.catchRat(jerry)
+    tom.catchRat(mic)
+    tom.eatRat()
+    tom.eatRat()
+    tom.catchRat(mic)
+    tom.eatRat()
+</script>
+</body>
+</html>
