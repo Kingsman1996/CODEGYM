@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bàn Cờ Caro</title>
+    <style>
+
+        #caro {
+            position: relative;
+            border: 1px solid black;
+        }
+
+        .cell {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            user-select: none;
+        }
+
+    </style>
+</head>
+<body>
+<div id="caro"></div>
+
+<script>
+    const board = document.getElementById("caro");
+    const cellSize = 30;
+    const caros = [];
+    let currentPlayer = "X";
+    let endGame = false;
+    for (let i = 0; i < 20; i++) {
+        caros.push([]);
+        for (let j = 0; j < 20; j++) {
+            caros[i][j] = "";
+            const cell = document.createElement("div");
+            cell.className = "cell";
+            cell.style.left = `${j * cellSize}px`;
+            cell.style.top = `${i * cellSize}px`;
+            cell.dataset.row = i;
+            cell.dataset.col = j;
+            cell.addEventListener("click", (e) => {
+                if (endGame) return;
+                const row = parseInt(e.target.dataset.row);
+                const col = parseInt(e.target.dataset.col);
+                if (caros[row][col] === "") {
+                    caros[row][col] = currentPlayer;
+                    e.target.textContent = currentPlayer;
+                    if (checkWin(row, col, currentPlayer)) {
+                        alert(`${currentPlayer} thắng!`);
+                        endGame = true;
+                    }
+                    currentPlayer = currentPlayer === "X" ? "O" : "X";
+                    cell.style.color = currentPlayer === "X" ? "red" : "blue";
+                }
+            });
+            board.appendChild(cell);
+        }
+    }
+
+    function checkWin(row, col, player) {
+        return (
+            checkDirection(row, col, player, 0, 1) ||
+            checkDirection(row, col, player, 1, 0) ||
+            checkDirection(row, col, player, 1, 1) ||
+            checkDirection(row, col, player, 1, -1)
+        );
+    }
+
+    function checkDirection(row, col, player, rowDir, colDir) {
+        let count = 1;
+        let r = row + rowDir;
+        let c = col + colDir;
+        while (r >= 0 && r < 20 && c >= 0 && c < 20 && caros[r][c] === player) {
+            count++;
+            r += rowDir;
+            c += colDir;
+        }
+        r = row - rowDir;
+        c = col - colDir;
+        while (r >= 0 && r < 20 && c >= 0 && c < 20 && caros[r][c] === player) {
+            count++;
+            r -= rowDir;
+            c -= colDir;
+        }
+
+        return count >= 5;
+    }
+</script>
+</body>
+</html>
