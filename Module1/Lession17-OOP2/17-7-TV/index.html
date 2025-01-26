@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TV</title>
+</head>
+<body>
+<script>
+    class TV {
+        constructor(id) {
+            this.kenh = 7;
+            this.amluong = 0;
+            this.trangthai = "Off";
+            this.id = id
+        }
+
+        hienThiKenh(kenhnao) {
+            this.kenh = kenhnao;
+            document.write(`Đang hiển thị kênh ${kenhnao} <br>`)
+        }
+
+        hienThiAm(how) {
+            this.amluong = how;
+            document.write(`Âm lượng đang ở mức ${this.amluong}<br>`)
+        }
+
+        batTat() {
+            if (this.trangthai === "Off") {
+                this.trangthai = "On"
+                document.write(`TV ${this.id} đang bật <br>`)
+            } else {
+                this.trangthai = "Off"
+                document.write(`TV ${this.id} đang tắt <br>`)
+            }
+        };
+    }
+
+
+    class Remote {
+        constructor(id) {
+            this.id = id
+        }
+
+        turnTV() {
+            for (let tv of tvs) {
+                if (this.id == tv.id) {
+                    tv.batTat()
+                }
+            }
+        }
+
+        chuyenKenh(kenhnao) {
+            for (let tv of tvs) {
+                if (this.id === tv.id) {
+                    tv.hienThiKenh(kenhnao)
+                    document.write(`Điều khiển ${this.id} đã điều khiển TV ${tv.id} chuyển đến kênh ${kenhnao} <br> `)
+                }
+            }
+        }
+
+        chinhAm(how) {
+            for (let tv of tvs) {
+                if (this.id == tv.id) {
+                    tv.hienThiAm(how)
+                    document.write(`Điều khiển ${this.id} đã điều khiển TV ${tv.id} chỉnh âm lượng thành ${how} <br> `)
+                }
+            }
+        }
+
+    }
+
+    const tvs = []
+    const dieukhiens = []
+    for (let i = 0; i < 4; i++) {
+        dieukhiens.push(new Remote(i))
+        tvs.push(new TV(i))
+    }
+    dieukhiens[0].turnTV()
+    dieukhiens[0].turnTV()
+    dieukhiens[2].turnTV()
+    dieukhiens[2].chinhAm(20)
+    dieukhiens[2].chuyenKenh(3)
+    dieukhiens[2].turnTV()
+</script>
+</body>
+</html>
