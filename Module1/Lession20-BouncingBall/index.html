@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ball</title>
+</head>
+<style>
+    canvas {
+        border: 1px solid black;
+        display: block;
+        margin: 0;
+    }
+
+    button {
+        width: 100px;
+        height: 50px;
+        font-size: 30px;
+        margin: 10px 0;
+    }
+</style>
+<body>
+<canvas id="canvas" width="700" height="700"></canvas>
+<button onclick="startGame()">Start</button>
+<script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    class Board {
+        constructor(rong, cao) {
+            this.rong = rong;
+            this.cao = cao;
+        }
+
+        draw() {
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = "black";
+            ctx.strokeRect(0, 0, this.rong, this.cao);
+        }
+    }
+
+    class Ball {
+        constructor(x, y, dx, dy) {
+            this.x = x;
+            this.y = y;
+            this.dx = dx;
+            this.dy = dy;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, 10, 0, Math.PI * 2);
+            ctx.fillStyle = "red";
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        move() {
+            this.x += this.dx;
+            this.y += this.dy;
+            if (this.x + 10 >= canvas.width ||
+                this.x <= 10) {
+                this.dx = -this.dx;
+            }
+            if ((this.y + 40 >= board.cao && this.touchBar()) || this.y <= 10) {
+                this.dy = -this.dy;
+            }
+            if (this.y + 10 >= board.cao) {
+                alert("Game Over")
+                gameRunning = false;
+                clearInterval(scoreInterval);
+                ball.x = Math.random() * canvas.width;
+                ball.y = 10;
+                ball.draw();
+                return
+            }
+        }
+
+        touchBar() {
+            return this.x + 10 >= bar.x && this.x - 10 <= bar.x + bar.rong;
+        }
+    }
+
+    class Bar {
+        constructor(x, rong, cao) {
+            this.rong = rong;
+            this.x = x;
+            this.cao = cao;
+            this.eventAdded = false;
+        }
+
+        move() {
+            if (!this.eventAdded) {
+                document.addEventListener('keydown', (e) => {
+                    switch (e.key) {
+                        case "ArrowLeft":
+                            this.x -= 10;
+                            break;
+                        case "ArrowRight":
+                            this.x += 10;
+                    }
+                })
+                this.eventAdded = true;
+            }
+        }
+
+        draw() {
+            if (this.x + this.rong > canvas.width) {
+                this.x = canvas.width - this.rong;
+            }
+            if (this.x < 0) {
+                this.x = 0;
+            }
+            ctx.fillStyle = "blue";
+            ctx.fillRect(this.x, canvas.height - this.cao, this.rong, this.cao);
+        }
+    }
+
+    class Score {
+        constructor() {
+            this.score = 0;
+        }
+
+        scored() {
+            this.score++;
+        }
+
+        draw() {
+            ctx.font = "30px Arial";
+            ctx.fillStyle = "black"
+            ctx.fillText(`Điểm: ${this.score}`, 10, 30)
+        }
+    }
+
+    function clearBoard() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        board.draw();
+        bar.draw()
+        ball.draw()
+        score.draw()
+    }
+
+    function update() {
+        if (!gameRunning) {
+            return
+        }
+        ball.move()
+        bar.move()
+        clearBoard()
+        requestAnimationFrame(update)
+    }
+
+    function startGame() {
+        if (!confirm("Bạn muốn bắt đầu trò chơi?")) {
+            return
+        }
+        gameRunning = true;
+        clearInterval(scoreInterval);
+        scoreInterval = setInterval(scoreUp, 2000);
+        update()
+    }
+
+    function scoreUp() {
+        score.score++
+    }
+
+    let gameRunning = false;
+    let scoreInterval;
+    const board = new Board(canvas.width, canvas.height);
+    const bar = new Bar(100, 120, 30);
+    const ball = new Ball(100, 120, 1, 1);
+    const score = new Score();
+    clearBoard()
+</script>
+</body>
+</html>
