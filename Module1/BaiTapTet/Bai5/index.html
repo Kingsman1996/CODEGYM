@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5</title>
+</head>
+<body>
+<script>
+    function findMaxNumber(num) {
+        if (num > 9999 || num < 1000) {
+            document.write("-1<br>")
+            return -1;
+        }
+        const numSplited = num.toString().split("");
+        const tempNumbers = []
+        for (let i = 0; i < 4; i++) {
+            let boba = []
+            for (let j = 0; j < 4; j++) {
+                if (i === j) {
+                    continue
+                }
+                boba.push(numSplited[j])
+            }
+            tempNumbers.push(parseInt(boba.join("")))
+        }
+        let max = tempNumbers[0]
+        for (let item of tempNumbers) {
+            if (item > max) {
+                max = item
+            }
+        }
+        document.write(`Số lớn nhất tách ra từ ${num} là ${max}<br>`);
+        return max
+    }
+
+    findMaxNumber(923);
+    findMaxNumber(1923);
+    findMaxNumber(9371)
+</script>
+</body>
+</html>

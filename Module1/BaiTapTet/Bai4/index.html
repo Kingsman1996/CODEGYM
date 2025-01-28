@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4</title>
+</head>
+<body>
+<script>
+    function findX(x) {
+        const phanSo = /^-?\d+\/[1-9]\d*$/;
+        if (!phanSo.test(x)) {
+            document.write(`${x} không phải là phân số <br>`)
+            return
+        }
+        if (parseInt(x.split("/")[0]) === 0) {
+            document.write(`Phân số ${x} bằng 0 <br>`)
+            return;
+        }
+        let tuSo = parseInt(x.split("/")[0]);
+        let mauSo = parseInt(x.split("/")[1]);
+        const tuRutGon = tuSo / uocChung(tuSo, mauSo);
+        const mauRutGon = mauSo / uocChung(tuSo, mauSo);
+        document.write(`Dạng rút gọn của ${x} là: ${tuRutGon}/${mauRutGon} <br>`)
+    }
+
+    function uocChung(a, b) {
+        let phanDu;
+        let tempBig;
+        let tempSmall;
+        if (a > b) {
+            tempBig = a
+            tempSmall = b
+        } else {
+            tempSmall = a
+            tempBig = b
+        }
+        while (tempBig % tempSmall !== 0) {
+            phanDu = tempBig % tempSmall;
+            tempBig = tempSmall
+            tempSmall = phanDu
+        }
+        return tempSmall
+    }
+
+    findX("12/a11")
+    findX("123/")
+    findX("1/0")
+    findX("0/1")
+    findX("1/2")
+    findX("12/48")
+</script>
+</body>
+</html>

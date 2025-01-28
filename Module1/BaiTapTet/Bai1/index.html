@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập độ dài mảng");
+
+    function checkNumber() {
+        if (number > 20) {
+            number = prompt("Nhập độ dài mảng nhỏ hơn 20");
+            checkNumber()
+        }
+    }
+    checkNumber()
+
+    let arr = [];
+    for (let i = 0; i < number; i++) {
+        arr[i] = prompt(`Nhập vào phần tử ${i + 1}`);
+    }
+    document.write(`Mảng đã nhập ${arr}<br>`);
+    const dif = arr[0] - arr[1]
+    let sameDif;
+    for (let i = 1; i < arr.length - 1; i++) {
+        if (arr[i] - arr[i + 1] === dif) {
+            sameDif = true
+        } else {
+            sameDif = false
+            break;
+        }
+    }
+    if (sameDif === true) {
+        document.write("OK")
+    } else {
+        document.write("NO")
+    }
+</script>
+</body>
+</html>

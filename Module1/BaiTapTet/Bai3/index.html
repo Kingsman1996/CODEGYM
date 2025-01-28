@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+<script>
+    const number = parseInt(prompt("Nhập vào độ dài mảng"))
+    let arr = []
+    for (let i = 0; i < number; i++) {
+        arr[i] = parseInt(prompt(`Nhập vào phần tử thứ ${i+1}`))
+    }
+    document.write(`Mảng vừa nhập: ${arr}<br>`)
+    let doiXung;
+    for (let i = 0, j = number - 1; i < Math.floor(number / 2); i++, j--) {
+        if (arr[i] === arr[j]) {
+            doiXung = true
+        } else {
+            doiXung = false
+            break;
+        }
+    }
+    if (doiXung) {
+        document.write("OK")
+    } else {
+        document.write("NO")
+    }
+</script>
+</body>
+</html>
