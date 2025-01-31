@@ -6,31 +6,34 @@
 </head>
 <body>
 <script>
+    let founded3Numbers = []
+    let temp3Numbers = [];
+    let numberToArray;
+    let max;
+
     function findMaxNumber(num) {
         if (num > 9999 || num < 1000) {
-            document.write("-1<br>")
+            document.write("-1 <br>")
             return -1;
         }
-        const numSplited = num.toString().split("");
-        const tempNumbers = []
+        numberToArray = num.toString().split("");
         for (let i = 0; i < 4; i++) {
-            let boba = []
             for (let j = 0; j < 4; j++) {
                 if (i === j) {
                     continue
                 }
-                boba.push(numSplited[j])
+                temp3Numbers.push(numberToArray[j])
             }
-            tempNumbers.push(parseInt(boba.join("")))
+            founded3Numbers.push(parseInt(temp3Numbers.join("")))
+            temp3Numbers = []
         }
-        let max = tempNumbers[0]
-        for (let item of tempNumbers) {
+        max = founded3Numbers[0]
+        for (let item of founded3Numbers) {
             if (item > max) {
                 max = item
             }
         }
         document.write(`Số lớn nhất tách ra từ ${num} là ${max}<br>`);
-        return max
     }
 
     findMaxNumber(923);

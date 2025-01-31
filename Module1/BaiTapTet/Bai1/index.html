@@ -6,32 +6,32 @@
 </head>
 <body>
 <script>
-    let number = prompt("Nhập độ dài mảng");
+    let number = prompt("Nhập độ dài mảng không quá 20");
 
     function checkNumber() {
-        if (number > 20) {
-            number = prompt("Nhập độ dài mảng nhỏ hơn 20");
+        if (!number) {
+            return;
+        }
+        const reg1 = /^[1-9]$/;
+        const reg2 = /^1[0-9]|2[0]$/;
+        if (!reg1.test(number) && !reg2.test(number)) {
+            number = prompt(`Độ dài không hợp lệ`);
             checkNumber()
         }
     }
-    checkNumber()
 
+    checkNumber()
     let arr = [];
     for (let i = 0; i < number; i++) {
-        arr[i] = prompt(`Nhập vào phần tử ${i + 1}`);
+        arr[i] = prompt(`Nhập phần tử thứ ${i + 1}`);
     }
     document.write(`Mảng đã nhập ${arr}<br>`);
     const dif = arr[0] - arr[1]
     let sameDif;
     for (let i = 1; i < arr.length - 1; i++) {
-        if (arr[i] - arr[i + 1] === dif) {
-            sameDif = true
-        } else {
-            sameDif = false
-            break;
-        }
+        sameDif = arr[i] - arr[i + 1] === dif ? true : false;
     }
-    if (sameDif === true) {
+    if (sameDif) {
         document.write("OK")
     } else {
         document.write("NO")

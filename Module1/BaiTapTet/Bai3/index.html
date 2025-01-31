@@ -6,20 +6,19 @@
 </head>
 <body>
 <script>
-    const number = parseInt(prompt("Nhập vào độ dài mảng"))
+    let number = prompt("Nhập vào độ dài mảng")
+    const reg = /^[0-9]+$/
+    while (!reg.test(number)) {
+        number = prompt("Độ dài mảng không hợp lệ")
+    }
     let arr = []
     for (let i = 0; i < number; i++) {
-        arr[i] = parseInt(prompt(`Nhập vào phần tử thứ ${i+1}`))
+        arr[i] = prompt(`Nhập phần tử thứ ${i + 1}`)
     }
     document.write(`Mảng vừa nhập: ${arr}<br>`)
     let doiXung;
     for (let i = 0, j = number - 1; i < Math.floor(number / 2); i++, j--) {
-        if (arr[i] === arr[j]) {
-            doiXung = true
-        } else {
-            doiXung = false
-            break;
-        }
+        doiXung = arr[i] === arr[j] ? true : false
     }
     if (doiXung) {
         document.write("OK")

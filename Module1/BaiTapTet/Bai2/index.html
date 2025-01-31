@@ -7,11 +7,11 @@
 <body>
 <script>
     function checkTriangle(x, y, z) {
-        const isTriangle = x + y > z && z + z > y && y + z > x;
-        const pitago =  (x * x === y * y + z * z) ||
-                        (y * y === z * z + x * x) ||
-                        (z * z === y * y + x * x);
-        if (pitago) {
+        const isTriangle = x + y > z && x + z > y && y + z > x;
+        const pitagoMatch = (x * x === y * y + z * z) ||
+            (y * y === z * z + x * x) ||
+            (z * z === y * y + x * x);
+        if (pitagoMatch) {
             document.write(`${x}, ${y}, ${z} là 3 cạnh của 1 tam giác vuông <br>`)
         } else if (isTriangle) {
             document.write(`${x}, ${y}, ${z} chỉ là 3 cạnh của 1 tam giác <br>`)

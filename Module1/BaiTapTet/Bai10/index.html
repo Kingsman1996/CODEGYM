@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 10</title>
+</head>
+<body>
+<script>
+    function checkString(str) {
+        const nguyenAms = ["a", "e", "i", "o", "u"]
+        let found = []
+        for (let item of nguyenAms) {
+            if (str.includes(item) || str.includes(item.toUpperCase())) {
+                found.push(item)
+            }
+        }
+        document.write(`${found}<br>`);
+        return found
+    }
+
+    checkString("hello")
+    checkString("Codegym A")
+</script>
+</body>
+</html>
