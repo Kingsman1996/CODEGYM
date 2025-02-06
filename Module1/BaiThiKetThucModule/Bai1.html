@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let input = prompt("Nhập vào độ dài mảng là số nguyên (không quá 50)")
+    if (input) {
+        const reg = /^[0-9]+$/
+        while ((!reg.test(input)) || input > 50 || input < 1) {
+            input = prompt("Độ dài mảng phải không hợp lệ, nhập lại")
+        }
+        let array = [];
+        for (let i = 0; i < input; i++) {
+            array[i] = prompt(`Nhập vào phần tử thứ ${i + 1}`)
+            if (!array[i]) {
+                break;
+            } else {
+                while (!reg.test(array[i])) {
+                    array[i] = prompt(`Phải nhập vào số nguyên`)
+                }
+            }
+        }
+        document.write(`Mảng đã nhập: ${array}<br>`)
+        let sum = 0
+        let count = 0
+        for (let item of array) {
+            if (+item % 3 === 0) {
+                sum += +item
+                count++
+            }
+        }
+        let avg = sum / count
+        if (count > 0) {
+            document.write(`Trung bình cộng các số chia hết cho 3 trong mảng: ${avg}<br>`)
+        } else {
+            document.write("Không có số nào chia hết cho 3 trong mảng")
+        }
+    }
+</script>
+</body>
+</html>

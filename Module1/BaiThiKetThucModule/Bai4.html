@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<style>
+    body {
+        font-family: Arial;
+    }
+
+    table, th, td {
+        border-collapse: collapse;
+        border: 2px solid black;
+    }
+
+    .header {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    td {
+        width: fit-content;
+        padding: 5px;
+    }
+</style>
+<body>
+<h1>Quản lý công nhân</h1>
+
+<table>
+    <thead>
+    <tr class="header">
+        <td>STT</td>
+        <td>HỌ VÀ TÊN</td>
+        <td>NGÀY SINH</td>
+        <td>ĐỊA CHỈ</td>
+        <td>LƯƠNG</td>
+        <td>CHỨC VỤ</td>
+    </tr>
+    </thead>
+    <tbody id="info"></tbody>
+</table>
+<script>
+    class Worker {
+        constructor(stt, ten, ngaysinh, diachi, luong, chucvu) {
+            this.stt = stt;
+            this.ten = ten;
+            this.ngaysinh = ngaysinh;
+            this.diachi = diachi;
+            this.luong = luong;
+            this.chucvu = chucvu;
+        }
+    }
+
+    let tens = []
+    let workers = []
+    workers.push(new Worker(1, "Nguyễn Văn B", "02/03/2000", "Huế", 3000, "Nhân viên hàn"))
+    workers.push(new Worker(2, "Nguyễn Văn A", "01/02/1999", "Hà Nội", 2000, "Nhân viên treo hàng"))
+    workers.push(new Worker(3, "Nguyễn Văn C", "03/04/2001", "Đà Nẵng", 4000, "Bảo vệ",))
+    for (let item of workers) {
+        tens.push(item.ten)
+    }
+    const tenSapXep = tens.sort()
+    for (let i = 0; i < tenSapXep.length; i++) {
+        for (let item of workers) {
+            if (item.ten === tenSapXep[i]) {
+                document.getElementById("info").innerHTML += `
+    <tr>
+    <td style="text-align: center">${item.stt}</td>
+    <td>${item.ten}</td>
+    <td style="text-align: center">${item.ngaysinh}</td>
+    <td>${item.diachi}</td>
+    <td style="text-align: center">${item.luong}</td>
+    <td>${item.chucvu}</td>
+    </tr>`
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

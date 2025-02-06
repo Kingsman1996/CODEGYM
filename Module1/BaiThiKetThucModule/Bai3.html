@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let input = prompt("Nhập vào tháng/năm cần kiểm tra ngày")
+    if (input) {
+        const reg = /^(0[1-9]|1[0-2])\/\d{4}$/;
+        if (reg.test(input)) {
+            countDays(input)
+        } else {
+            alert("Tháng không hợp lệ")
+        }
+    }
+    let isNhuan = false;
+
+    function kiemTraNamNhuan(year) {
+        if (year % 400 === 0) {
+            isNhuan = true
+        } else {
+            if (year % 4 === 0) {
+                if (year % 100 !== 0) {
+                    isNhuan = true
+                } else {
+                    isNhuan = false
+                }
+            } else {
+                isNhuan = false
+            }
+        }
+    }
+
+    function countDays(monthyear) {
+        const month = +monthyear.split("/")[0];
+        let day;
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                day = 31
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                day = 30
+                break;
+            default:
+                const year = +monthyear.split("/")[1];
+                kiemTraNamNhuan(year)
+                if (isNhuan) {
+                    day = 29
+                } else {
+                    day = 28
+                }
+        }
+        return document.write(`Tháng ${monthyear} có ${day} ngày`);
+    }
+</script>
+</body>
+</html>
