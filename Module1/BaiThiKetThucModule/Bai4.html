@@ -5,11 +5,8 @@
     <title>Bài 4</title>
 </head>
 <style>
-    body {
-        font-family: Arial;
-    }
-
     table, th, td {
+        font-family: arial, sans-serif;
         border-collapse: collapse;
         border: 2px solid black;
     }
@@ -42,41 +39,40 @@
 </table>
 <script>
     class Worker {
-        constructor(stt, ten, ngaysinh, diachi, luong, chucvu) {
-            this.stt = stt;
-            this.ten = ten;
-            this.ngaysinh = ngaysinh;
-            this.diachi = diachi;
-            this.luong = luong;
-            this.chucvu = chucvu;
+        constructor(id, name, birth, address, salary, job) {
+            this.id = id;
+            this.name = name;
+            this.birth = birth;
+            this.address = address;
+            this.salary = salary;
+            this.job = job;
         }
     }
 
-    let tens = []
+    let names = []
     let workers = []
     workers.push(new Worker(1, "Nguyễn Văn B", "02/03/2000", "Huế", 3000, "Nhân viên hàn"))
     workers.push(new Worker(2, "Nguyễn Văn A", "01/02/1999", "Hà Nội", 2000, "Nhân viên treo hàng"))
     workers.push(new Worker(3, "Nguyễn Văn C", "03/04/2001", "Đà Nẵng", 4000, "Bảo vệ",))
     for (let item of workers) {
-        tens.push(item.ten)
+        names.push(item.name)
     }
-    const tenSapXep = tens.sort()
-    for (let i = 0; i < tenSapXep.length; i++) {
+    const sortedNames = names.sort()
+    for (let i = 0; i < sortedNames.length; i++) {
         for (let item of workers) {
-            if (item.ten === tenSapXep[i]) {
+            if (item.name === sortedNames[i]) {
                 document.getElementById("info").innerHTML += `
-    <tr>
-    <td style="text-align: center">${item.stt}</td>
-    <td>${item.ten}</td>
-    <td style="text-align: center">${item.ngaysinh}</td>
-    <td>${item.diachi}</td>
-    <td style="text-align: center">${item.luong}</td>
-    <td>${item.chucvu}</td>
-    </tr>`
+                <tr>
+                    <td style="text-align: center">${item.id}</td>
+                    <td>${item.name}</td>
+                    <td style="text-align: center">${item.birth}</td>
+                    <td>${item.address}</td>
+                    <td style="text-align: center">${item.salary}</td>
+                    <td>${item.job}</td>
+                </tr>`
             }
         }
     }
-
 </script>
 </body>
 </html>

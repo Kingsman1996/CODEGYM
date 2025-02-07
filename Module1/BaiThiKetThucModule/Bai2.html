@@ -16,11 +16,10 @@
                 sum += i;
             }
         }
-        return document.write(`${number}: ${sum === number}<br>`)
+        return sum === number
     }
-
-    checkPerfectNumber(6)
-    checkPerfectNumber(9)
+    document.write(`${checkPerfectNumber(6)}<br>`)
+    document.write(checkPerfectNumber(9))
 </script>
 </body>
 </html>

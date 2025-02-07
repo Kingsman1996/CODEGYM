@@ -15,27 +15,12 @@
             alert("Tháng không hợp lệ")
         }
     }
-    let isNhuan = false;
 
-    function kiemTraNamNhuan(year) {
-        if (year % 400 === 0) {
-            isNhuan = true
-        } else {
-            if (year % 4 === 0) {
-                if (year % 100 !== 0) {
-                    isNhuan = true
-                } else {
-                    isNhuan = false
-                }
-            } else {
-                isNhuan = false
-            }
-        }
-    }
 
     function countDays(monthyear) {
         const month = +monthyear.split("/")[0];
         let day;
+        let isNhuan = false;
         switch (month) {
             case 1:
             case 3:
@@ -54,15 +39,25 @@
                 break;
             default:
                 const year = +monthyear.split("/")[1];
-                kiemTraNamNhuan(year)
+                if (year % 400 === 0) {
+                    isNhuan = true
+                } else {
+                    if (year % 4 === 0) {
+                        if (year % 100 !== 0) {
+                            isNhuan = true
+                        }
+                    }
+                }
                 if (isNhuan) {
                     day = 29
                 } else {
                     day = 28
                 }
         }
-        return document.write(`Tháng ${monthyear} có ${day} ngày`);
+        return day;
     }
+
+    document.write(`Tháng ${input} có ${countDays(input)} ngày`)
 </script>
 </body>
 </html>

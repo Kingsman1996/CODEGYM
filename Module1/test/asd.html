@@ -1,13 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
 </head>
-<body>
-<input type="text" onchange="hamtao()">
+<body style="font-size: 70px">
 <script>
-   5===5?console.log('hfksdhdfh'):console.log('zxc');
+    let bill = 1336 + 63
+    document.write(`bill: 1336 + 63 = ${bill} <br>`)
+    let von = 460
+    document.write(`vốn: ${von}<br>`)
+    let thiethai = (bill - von) / 6
+    document.write(`Thiệt hại: ${thiethai}<br><br>`)
+    let temp = von + thiethai
+    document.write(`=> Mỗi người chuyển ${Math.floor(thiethai)}k<br>
+    Nhất chuyển ${von}+${Math.floor(thiethai)}=${Math.floor(temp)}k`)
 </script>
 </body>
 </html>
