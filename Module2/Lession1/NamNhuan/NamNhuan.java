@@ -5,14 +5,20 @@ public class NamNhuan {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập năm");
         int year = sc.nextInt();
+        boolean isLeap;
         if (year % 4 == 0) {
             if (year % 400 == 0) {
-                System.out.println("Năm " + year + " là năm nhuận");
+                isLeap = true;
             } else if (year % 100 == 0) {
-                System.out.println("Năm " + year + " không là năm nhuận");
+                isLeap = false;
             } else {
-                System.out.println("Năm " + year + " là năm nhuận");
+                isLeap = true;
             }
+        } else {
+            isLeap = false;
+        }
+        if (isLeap) {
+            System.out.println("Năm " + year + " là năm nhuận");
         } else {
             System.out.println("Năm " + year + " không là năm nhuận");
         }
