@@ -9,7 +9,8 @@ public class CheckPrime {
             System.out.println("Not Prime");
         } else {
             boolean isPrime = true;
-            for (int i = 2; i <= Math.sqrt(number); i++) {
+            int i = 2;
+            while (i <= Math.sqrt(number)) {
                 if (number % i == 0) {
                     isPrime = false;
                     break;
