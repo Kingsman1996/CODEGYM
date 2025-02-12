@@ -15,13 +15,15 @@ public class FindMax {
                 arr[i] = sc.nextInt();
             }
             int max = arr[0];
+            int index = 0;
             for (int i = 1; i < arr.length; i++) {
                 if (arr[i] > max) {
                     max = arr[i];
+                    index = i + 1;
                 }
             }
             System.out.println("Input array: " + Arrays.toString(arr));
-            System.out.println("Max is: " + max);
+            System.out.println("Max is: " + max + " at " + index);
         }
     }
 }
