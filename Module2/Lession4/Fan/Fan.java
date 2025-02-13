@@ -23,7 +23,7 @@ public class Fan {
     }
 
     public void setIsOn(boolean on) {
-        this.isOn = true;
+        this.isOn = on;
     }
 
     public double getRadius() {
