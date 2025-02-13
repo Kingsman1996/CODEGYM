@@ -47,7 +47,7 @@ public class Fan {
         if (on) {
             return "Speed: " + this.speed + ", Radius: " + this.radius + ", Color: " + this.color + ", fan is on";
         }
-        return "Speed: " + this.speed + ", Radius: " + this.radius + ", Color: " + this.color + ", fan is off";
+        return "Radius: " + this.radius + ", Color: " + this.color + ", fan is off";
     }
 
     public static void main(String[] args) {
