@@ -3,7 +3,7 @@ public class Fan {
     public final int MEDIUM = 2;
     public final int FAST = 3;
     private int speed = SLOW;
-    private boolean on = false;
+    private boolean isOn = false;
     private double radius = 5.0d;
     private String color = "blue";
 
@@ -18,12 +18,12 @@ public class Fan {
         this.speed = speed;
     }
 
-    public boolean getOn() {
-        return on;
+    public boolean getIsOn() {
+        return isOn;
     }
 
-    public void setOn(boolean on) {
-        this.on = true;
+    public void setIsOn(boolean on) {
+        this.isOn = true;
     }
 
     public double getRadius() {
@@ -44,7 +44,7 @@ public class Fan {
 
 
     public String toString() {
-        if (on) {
+        if (isOn) {
             return "Speed: " + this.speed + ", Radius: " + this.radius + ", Color: " + this.color + ", fan is on";
         }
         return "Radius: " + this.radius + ", Color: " + this.color + ", fan is off";
@@ -52,7 +52,7 @@ public class Fan {
 
     public static void main(String[] args) {
         Fan fan1 = new Fan();
-        fan1.setOn(true);
+        fan1.setIsOn(true);
         fan1.setRadius(10.0d);
         fan1.setColor("yellow");
         fan1.setSpeed(3);
