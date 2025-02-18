@@ -38,7 +38,11 @@ public class MoveablePoint extends Point {
     }
 
     public float[] getSpeed() {
-        return new float[]{getxSpeed(), getySpeed()};
+        return new float[]{xSpeed, ySpeed};
+    }
+
+    public void move() {
+        super.setXY(getX() + xSpeed, ySpeed + getY());
     }
 
     @Override
@@ -46,7 +50,4 @@ public class MoveablePoint extends Point {
         return super.toString() + ", { xSpeed = " + getxSpeed() + ", ySpeed = " + getySpeed() + " }";
     }
 
-    public void move() {
-        super.setXY(getxSpeed() + getX(), getySpeed() + getY());
-    }
 }
