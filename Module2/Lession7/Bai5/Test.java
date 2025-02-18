@@ -1,16 +1,19 @@
 public class Test {
     public static void main(String[] args) {
-        Resizeable[] shapes = new Resizeable[5];
+        Shape[] shapes = new Shape[4];
         shapes[0] = new Circle(3, "red", true);
         shapes[1] = new Rectangle(2, 5);
         shapes[2] = new Circle(4, "green", false);
-        for (int i = 0; i < 3; i++) {
-            System.out.println("Before: " + shapes[i].toString());
+        shapes[3] = new Square(4.5);
+        for (int i = 0; i < 4; i++) {
+            System.out.print("Before: " + shapes[i].toString());
+            shapes[i].resize(100);
+            if (shapes[i] instanceof Colorable) {
+                ((Colorable) shapes[i]).howToColor();
+            }
+            System.out.println();
         }
-        shapes[0].resize(20);
-        shapes[1].resize(50);
-        shapes[2].resize(100);
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             System.out.println("After: " + shapes[i].toString());
         }
     }
