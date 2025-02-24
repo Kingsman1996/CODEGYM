@@ -4,6 +4,7 @@ public class MyLinkedListTest {
         list.addFirst(1);
         list.addFirst(5);
         list.addFirst(2);
+        list.add(2,55);
         list.addFirst(3);
         System.out.println(list.toString());
     }

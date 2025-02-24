@@ -8,21 +8,23 @@ public class MyList<E> {
     public MyList() {
         elements = new Object[DEFAULT_CAPACITY];
     }
+
     private void ensureCapa() {
         int newCap = elements.length * 2;
         elements = Arrays.copyOf(elements, newCap);
     }
-    public void add(E e) {
+
+    public void add(E element) {
         if (size == elements.length) {
             ensureCapa();
         }
-        elements[size++] = e;
-    }
-    public E get(int i) {
-        if (i>= size || i <0) {
-            throw new IndexOutOfBoundsException("Index: " + i + ", Size " + i );
-        }
-        return (E) elements[i];
+        elements[size++] = element;
     }
 
+    public E get(int index) {
+        if (index >= size || index < 0) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size " + index);
+        }
+        return (E) elements[index];
+    }
 }

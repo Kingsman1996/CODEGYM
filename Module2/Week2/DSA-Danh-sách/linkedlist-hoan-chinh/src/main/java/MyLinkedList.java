@@ -69,7 +69,9 @@ public class MyLinkedList<E> {
 
     public MyLinkedList<E> clone() {
         MyLinkedList<E> newList = new MyLinkedList<>();
-        if (head == null) return newList;
+        if (head == null) {
+            return newList;
+        }
 
         newList.head = new Node(head.data);
         Node currentOld = head.next;
