@@ -43,6 +43,10 @@ public class MyStack {
     }
 
     public int getSize() {
+        return size;
+    }
+
+    public int getElements() {
         return topElementIndex + 1;
     }
 }

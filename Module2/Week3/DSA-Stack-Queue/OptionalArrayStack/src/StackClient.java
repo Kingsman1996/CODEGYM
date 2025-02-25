@@ -6,9 +6,16 @@ public class StackClient {
         stack.push(18);
         stack.push(37);
         stack.push(21);
-        System.out.println("Size before popping: " + stack.getSize());
+        System.out.println("Elements before popping: " + stack.getElements());
         System.out.println("Top element index: " + stack.getTop());
         System.out.println("Popping: " + stack.pop());
-        System.out.println("Size after popping: " + stack.getSize());
+        System.out.println("Elements after popping: " + stack.getElements());
+        stack.push(13);
+        stack.push(33);
+        stack.push(44);
+        stack.push(55);
+        for (int i = 0; i <= stack.getSize(); i++) {
+            stack.pop();
+        }
     }
 }
