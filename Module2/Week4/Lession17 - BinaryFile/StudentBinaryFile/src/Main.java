@@ -14,7 +14,7 @@ public class Main {
             e.printStackTrace();
         }
     }
-    public static List<Student> readDataFromFile(String path){
+    public static List<Student> readDataFromFile(String path) {
         List<Student> students = new ArrayList<>();
         try{
             FileInputStream fis = new FileInputStream(path);
