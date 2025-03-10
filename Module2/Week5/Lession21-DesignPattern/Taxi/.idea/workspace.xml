@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f3824f2-d53b-438f-9fba-48a0177798c9" name="Changes" comment="" />
+    <list default="true" id="c51732d7-0558-400c-b8b3-eafbe67b401a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,9 +15,9 @@
     </option>
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
+  "associatedIndex": 1
 }]]></component>
-  <component name="ProjectId" id="2u6mus6uhW37tCAEv41F1EXWq6Z" />
+  <component name="ProjectId" id="2u6nryno7psOfqabEirv1sQxIuw" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,7 +38,7 @@
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="FactoryMethod" />
+      <module name="Taxi" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -63,13 +60,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8f3824f2-d53b-438f-9fba-48a0177798c9" name="Changes" comment="" />
+      <changelist id="c51732d7-0558-400c-b8b3-eafbe67b401a" name="Changes" comment="" />
       <created>1740061712509</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1740061712509</updated>
       <workItem from="1740061809758" duration="44000" />
-      <workItem from="1741577625129" duration="465000" />
+      <workItem from="1741578094920" duration="331000" />
     </task>
     <servers />
   </component>
