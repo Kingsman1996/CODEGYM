@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2c3a19a2-0bcc-4a30-a678-b8d4d4c10de4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +30,7 @@
     "Application.Test.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ASUS/Desktop/MyProjects/CaseStudyModule2",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -66,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1740061712509</updated>
       <workItem from="1740061809758" duration="44000" />
-      <workItem from="1741580729032" duration="315000" />
+      <workItem from="1741580729032" duration="409000" />
     </task>
     <servers />
   </component>
