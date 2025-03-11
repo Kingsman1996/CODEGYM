@@ -4,34 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e4df03a-69d2-4c49-8a77-7fadac4a8b29" name="Changes" comment="" />
+    <list default="true" id="171c3d9c-f69b-4cd7-8f60-cae52db325b9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
-  <component name="ProjectId" id="2u9cAsZ34hD1yvBqWqUhgq91CDj" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2u9edBFDTTManMKVKRWrvg2Nfzx" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Client.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ASUS/Desktop/CODEGYM/Module2/Week5/Lession22-StructuralDP/RandomNumber",
+    "last_opened_file_path": "C:/Users/ASUS/Desktop/CODEGYM/Module2/Week5/Lession22-StructuralDP/RandomNumberFacade",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -41,16 +32,16 @@
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Client" />
-      <module name="DownloadProxy" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="RandomNumberFacade" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -65,13 +56,14 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9e4df03a-69d2-4c49-8a77-7fadac4a8b29" name="Changes" comment="" />
+      <changelist id="171c3d9c-f69b-4cd7-8f60-cae52db325b9" name="Changes" comment="" />
       <created>1740061712509</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1740061712509</updated>
       <workItem from="1740061809758" duration="44000" />
-      <workItem from="1741664091318" duration="839000" />
+      <workItem from="1741665303831" duration="40000" />
+      <workItem from="1741665385640" duration="511000" />
     </task>
     <servers />
   </component>
