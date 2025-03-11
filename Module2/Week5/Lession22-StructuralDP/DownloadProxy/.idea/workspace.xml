@@ -18,9 +18,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2u9cAsZ34hD1yvBqWqUhgq91CDj" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -31,7 +31,7 @@
     "Application.Client.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ASUS/Desktop/CODEGYM/Module2/Week5/Lession22-StructuralDP/RandomNumber",
+    "last_opened_file_path": "C:/Users/ASUS/Desktop/CODEGYM/Module2/Week5/Lession22-StructuralDP/SortAdapter",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -72,6 +72,7 @@
       <updated>1740061712509</updated>
       <workItem from="1740061809758" duration="44000" />
       <workItem from="1741664091318" duration="839000" />
+      <workItem from="1741666925353" duration="668000" />
     </task>
     <servers />
   </component>

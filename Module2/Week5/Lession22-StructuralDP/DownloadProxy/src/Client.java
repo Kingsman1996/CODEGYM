@@ -7,9 +7,7 @@ public class Client {
 
         System.out.print("Nhập URL file cần tải: ");
         String fileURL = scanner.nextLine();
-
         Downloader downloader = new FileDownloaderProxy();
-
         try {
             downloader.download(fileURL);
         } catch (IOException e) {
