@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Xem Hoạt Hình</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+<header>
+    <h1>Hoạt Hình Online</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Thể loại</a></li>
+        <li><a href="#">Mới nhất</a></li>
+    </ul>
+</nav>
+<main>
+    <aside class="left">
+        <h2>Danh sách phim</h2>
+        <ul id="video-list">
+            <li data-video="https://www.youtube.com/watch?v=cqM_HFH3ueg">
+                <img src="https://img.youtube.com/vi/cqM_HFH3ueg/0.jpg" alt="Ấu trùng tinh nghịch">
+                <span class="video-title">Ấu trùng tinh nghịch</span>
+            </li>
+            <li data-video="https://www.youtube.com/watch?v=PHGoUiMZyic">
+                <img src="https://img.youtube.com/vi/PHGoUiMZyic/0.jpg" alt="Doraemon">
+                <span class="video-title">Doraemon</span>
+            </li>
+            <li data-video="https://www.youtube.com/watch?v=VWBCNOg3ktA">
+                <img src="https://img.youtube.com/vi/VWBCNOg3ktA/0.jpg" alt="Booba">
+                <span class="video-title">Booba</span>
+            </li>
+            <li data-video="https://www.youtube.com/watch?v=x5tmwzy5oKA">
+                <img src="https://img.youtube.com/vi/x5tmwzy5oKA/0.jpg" alt="Cảnh sát trưởng Labrador">
+                <span class="video-title">Cảnh sát trưởng Labrador</span>
+            </li>
+        </ul>
+    </aside>
+
+    <section class="right">
+        <div id="video-container">
+            <iframe id="video-player" width="560" height="315"
+                    src="https://www.youtube.com/embed/cqM_HFH3ueg"
+                    frameborder="0" allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2025 Web Xem Hoạt Hình. Bản quyền thuộc về Kingsman</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
