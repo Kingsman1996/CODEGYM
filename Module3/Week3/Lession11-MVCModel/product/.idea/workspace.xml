@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="474fef4c-d348-4dcc-8fee-f7875028d2dc" name="Changes" comment="" />
+    <list default="true" id="b48f4f5f-f1ca-47d2-a4ff-55893009a154" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +18,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
         <option value="Jsp File" />
       </list>
@@ -31,20 +32,20 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
+  "associatedIndex": 7
 }]]></component>
-  <component name="ProjectId" id="2vCK0rvQRLQWsQgzKY73t7bN9Dw" />
+  <component name="ProjectId" id="2vCO3KPZXwndKh3T65gTSiyJESS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Gradle.Build customer-management.executor": "Run",
+    "Gradle.Build product.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Tomcat Server.Tomcat 9.0.1021.executor": "Run",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ASUS/Desktop/library/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0.jar",
+    "last_opened_file_path": "C:/Users/ASUS/Desktop/MyProjects/demo",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -56,18 +57,25 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\CODEGYM\Module3\Week3\Lession11-MVCModel\product\src\main\webapp" />
+      <recent name="C:\Users\ASUS\Desktop\CODEGYM\Module3\Week3\Lession11-MVCModel\product\src\main\webapp\WEB-INF" />
+      <recent name="C:\Users\ASUS\Desktop\CODEGYM\Module3\Week3\Lession11-MVCModel\product\src\main\webapp\product" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.1021" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.1021" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="hot-swap-classes" />
       <deployment>
-        <artifact name="Gradle : org.example : customer-management-1.0-SNAPSHOT.war">
+        <artifact name="Gradle : org.example : product-1.0-SNAPSHOT.war">
           <settings>
-            <option name="CONTEXT_PATH" value="" />
+            <option name="CONTEXT_PATH" value="/products" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="4209eaf3-022c-4b02-828a-280b378c8d06" />
+        <option name="BASE_DIRECTORY_NAME" value="c962b51b-48eb-407f-85eb-d46104bfa044" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -75,7 +83,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="63811" />
+        <option name="DEBUG_PORT" value="64189" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -140,7 +148,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Gradle : org.example : customer-management-1.0-SNAPSHOT.war" />
+          <artifact name="Gradle : org.example : product-1.0-SNAPSHOT.war" />
         </option>
       </method>
     </configuration>
@@ -156,13 +164,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="474fef4c-d348-4dcc-8fee-f7875028d2dc" name="Changes" comment="" />
+      <changelist id="b48f4f5f-f1ca-47d2-a4ff-55893009a154" name="Changes" comment="" />
       <created>1740061712509</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1740061712509</updated>
       <workItem from="1740061809758" duration="44000" />
-      <workItem from="1743643399504" duration="1980000" />
+      <workItem from="1743645389771" duration="8101000" />
     </task>
     <servers />
   </component>
