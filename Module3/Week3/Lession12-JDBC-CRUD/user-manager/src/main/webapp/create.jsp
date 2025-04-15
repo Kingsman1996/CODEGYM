@@ -6,15 +6,13 @@
     <title>User Management Application</title>
 </head>
 <body>
-<center>
     <h1>User Management</h1>
     <h2>
         <a href="users?action=users">List All Users</a>
     </h2>
-</center>
-<div align="center">
+<div>
     <form method="post">
-        <table border="1" cellpadding="5">
+        <table>
             <caption>
                 <h2>Add New User</h2>
             </caption>
@@ -37,10 +35,20 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2" align="center">
+                <th>Permission:</th>
+                <td>
+                    <input type="checkbox" name="add" size="15"/> add |
+                    <input type="checkbox" name="edit" size="15"/> edit |
+                    <input type="checkbox" name="delete" size="15"/> delete |
+                    <input type="checkbox" name="view" size="15"/> view
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
                     <input type="submit" value="Save"/>
                 </td>
             </tr>
+
         </table>
     </form>
 </div>
