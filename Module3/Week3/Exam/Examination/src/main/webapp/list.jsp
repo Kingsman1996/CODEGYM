@@ -29,6 +29,7 @@
             padding: 5px 10px;
             cursor: pointer;
         }
+
         table {
             border-collapse: collapse;
             width: 100%;
@@ -67,6 +68,26 @@
             background-color: #cc0000;
         }
 
+        .home-btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .home-btn:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+
     </style>
 </head>
 <body>
@@ -84,23 +105,25 @@
         <th>Hành động</th>
     </tr>
 
-    <c:forEach var="borrowCard" items="${borrowCardList}">
+    <c:forEach var="card" items="${cardList}">
         <tr>
-            <td>MS-${String.format("%04d", borrowCard.id)}</td>
-            <td>${borrowCard.book.title}</td>
-            <td>${borrowCard.book.author}</td>
-            <td>${borrowCard.student.name}</td>
-            <td>${borrowCard.student.className}</td>
-            <td>${borrowCard.borrowDate}</td>
-            <td>${borrowCard.returnDate}</td>
+            <td>MS-${String.format("%04d", card.id)}</td>
+            <td>${card.book.title}</td>
+            <td>${card.book.author}</td>
+            <td>${card.student.name}</td>
+            <td>${card.student.className}</td>
+            <td>${card.borrowDate}</td>
+            <td>${card.returnDate}</td>
             <td>
-                <a href="?action=return&borrowCardId=${borrowCard.id}">
+                <a href="?action=return&cardId=${card.id}">
                     <button type="button" class="return-btn" onclick="returnBook()">Trả sách</button>
                 </a>
             </td>
         </tr>
     </c:forEach>
 </table>
+<a href="book?action=" class="home-btn">Về trang chủ</a>
+
 <script>
     function returnBook(event) {
         let confirmation = confirm("Chắc muốn trả sách?");

@@ -72,7 +72,6 @@
 </head>
 <body>
 <h1>Mượn sách</h1>
-
 <form method="post">
     <p>Mã sách: <input type="text" name="bookCode" value="${book.code}" readonly></p>
     <p>Tên sách: <input type="text" name="bookTitle" value="${book.title}" readonly></p>

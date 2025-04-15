@@ -6,7 +6,7 @@ public class Book {
     private String title;
     private String author;
     private String description;
-    private int availableCopies;
+    private int amount;
 
 
     public int getId() {
@@ -41,12 +41,12 @@ public class Book {
         this.description = description;
     }
 
-    public int getAvailableCopies() {
-        return availableCopies;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setAvailableCopies(int availableCopies) {
-        this.availableCopies = availableCopies;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public String getCode() {

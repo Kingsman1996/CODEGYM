@@ -96,7 +96,6 @@
 <body>
 <h1>Danh sách sách</h1>
 
-<!-- Nút xem sách đã mượn -->
 <a href="book?action=list">
     <button class="view-borrowed-btn">Xem sách đã mượn</button>
 </a>
@@ -115,11 +114,11 @@
             <td>${book.code}</td>
             <td>${book.title}</td>
             <td>${book.author}</td>
-            <td>${book.availableCopies}</td>
+            <td>${book.amount}</td>
             <td>${book.description}</td>
             <td>
                 <c:choose>
-                    <c:when test="${book.availableCopies > 0}">
+                    <c:when test="${book.amount > 0}">
                         <a href="?action=borrow&bookId=${book.id}">
                             <button class="borrow-btn">Mượn</button>
                         </a>

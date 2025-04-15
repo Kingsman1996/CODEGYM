@@ -1,6 +1,6 @@
 package org.example.examination.model.dto;
 
-public class BorrowCard {
+public class Card {
     private int id;
     private Student student;
     private Book book;

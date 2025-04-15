@@ -7,13 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookDAO {
+    public static final String GET_ALL_SQL = "SELECT * FROM book";
+    public static final String GET_BY_ID_SQL = "SELECT * FROM book WHERE id = ?";
+    public static final String REDUCE_AMOUNT_SQL = "UPDATE book SET amount = amount - 1 WHERE id = ?";
+    public static final String INCREASE_AMOUNT_SQL = "UPDATE book SET amount = amount + 1 WHERE id = ?";
+    public static final String GET_BY_CARD_SQL = "SELECT * FROM card WHERE id = ?";
     private final Connection connection = DBConnection.connect();
 
-
-    public List<Book> getAllBooks() throws SQLException {
+    public List<Book> getAll() throws SQLException {
         List<Book> bookList = new ArrayList<>();
-        try (Statement stmt = connection.createStatement()) {
-            ResultSet resultSet = stmt.executeQuery("SELECT * FROM book");
+        try (Statement statement = connection.createStatement()) {
+            ResultSet resultSet = statement.executeQuery(GET_ALL_SQL);
             while (resultSet.next()) {
                 Book book = mapResultSet(resultSet);
                 bookList.add(book);
@@ -24,41 +28,51 @@ public class BookDAO {
         return bookList;
     }
 
-    private static Book mapResultSet(ResultSet rs) throws SQLException {
+    private static Book mapResultSet(ResultSet resultSet) throws SQLException {
         Book book = new Book();
-        book.setId(rs.getInt("id"));
-        book.setCode(rs.getString("code"));
-        book.setTitle(rs.getString("title"));
-        book.setAuthor(rs.getString("author"));
-        book.setDescription(rs.getString("description"));
-        book.setAvailableCopies(rs.getInt("AvailableCopies"));
+        book.setId(resultSet.getInt("id"));
+        book.setCode(resultSet.getString("code"));
+        book.setTitle(resultSet.getString("title"));
+        book.setAuthor(resultSet.getString("author"));
+        book.setDescription(resultSet.getString("description"));
+        book.setAmount(resultSet.getInt("amount"));
         return book;
     }
 
-    public Book getBookById(int id) throws SQLException {
-        String query = "SELECT * FROM book WHERE id = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setInt(1, id);
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                Book book = mapResultSet(rs);
-                return book;
+    public Book getById(int id) throws SQLException {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(GET_BY_ID_SQL)) {
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return mapResultSet(resultSet);
             }
         }
         return null;
     }
+
     public void reduceCopies(int id) throws SQLException {
-        String query = "UPDATE book SET AvailableCopies = AvailableCopies - 1 WHERE id = ? AND AvailableCopies > 0";
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setInt(1, id);
-            stmt.executeUpdate();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(REDUCE_AMOUNT_SQL)) {
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
         }
     }
+
     public void increaseCopies(int id) throws SQLException {
-        String query = "UPDATE book SET AvailableCopies = AvailableCopies + 1 WHERE id = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setInt(1, id);
-            stmt.executeUpdate();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(INCREASE_AMOUNT_SQL)) {
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
         }
+    }
+
+    public Book getByCard(int cardId) throws SQLException {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(GET_BY_CARD_SQL)) {
+            preparedStatement.setInt(1, cardId);
+            try (ResultSet rs = preparedStatement.executeQuery()) {
+                if (rs.next()) {
+                    return getById(rs.getInt("bookid"));
+                }
+            }
+        }
+        return null;
     }
 }

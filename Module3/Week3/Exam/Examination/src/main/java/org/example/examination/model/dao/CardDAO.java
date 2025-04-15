@@ -1,7 +1,7 @@
 package org.example.examination.model.dao;
 
 import org.example.examination.model.dto.Book;
-import org.example.examination.model.dto.BorrowCard;
+import org.example.examination.model.dto.Card;
 import org.example.examination.model.dto.Student;
 
 import java.sql.*;
@@ -10,18 +10,24 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BorrowCardDAO {
+public class CardDAO {
+    public static final String INSERT_SQL = "INSERT INTO card (studentid, bookid, BorrowDate, ReturnDate) VALUES (?, ?, ?, ?)";
+    public static final String UPDATE_SQL = "UPDATE card SET ReturnDate = CURDATE(), Status = false WHERE id = ?";
+    public static final String GET_ALL_SQL = "SELECT c.id, b.title AS bookTitle, b.author AS bookAuthor, "
+            + "s.name AS studentName, s.class AS studentClass, "
+            + "c.BorrowDate, c.ReturnDate "
+            + "FROM card c "
+            + "JOIN book b ON c.bookid = b.id "
+            + "JOIN Student s ON c.studentid = s.id "
+            + "WHERE c.Status = true";
     private final Connection connection = DBConnection.connect();
 
     public void insertBorrowCard(int studentId, int bookId, String borrowDate, String returnDate) throws SQLException {
-        String query = "INSERT INTO BorrowCard (studentid, bookid, BorrowDate, ReturnDate, Status) VALUES (?, ?, ?, ?, ?)";
-
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+        try (PreparedStatement stmt = connection.prepareStatement(INSERT_SQL)) {
             stmt.setInt(1, studentId);
             stmt.setInt(2, bookId);
             stmt.setString(3, convertJSPToDBDateFormat(borrowDate));
             stmt.setString(4, convertJSPToDBDateFormat(returnDate));
-            stmt.setBoolean(5, true);
             stmt.executeUpdate();
         }
         new BookDAO().reduceCopies(bookId);
@@ -48,60 +54,35 @@ public class BorrowCardDAO {
     }
 
     public void returnBook(int cardId) throws SQLException {
-        String query = "UPDATE BorrowCard SET ReturnDate = CURDATE(), Status = false WHERE id = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+        try (PreparedStatement stmt = connection.prepareStatement(UPDATE_SQL)) {
             stmt.setInt(1, cardId);
             stmt.executeUpdate();
         }
-        new BookDAO().increaseCopies(getBorrowedBookByBorrowCardId(cardId).getId());
+        new BookDAO().increaseCopies(new BookDAO().getByCard(cardId).getId());
     }
 
-    public List<BorrowCard> getBorrowedCardList() throws SQLException {
-        List<BorrowCard> borrowCardList = new ArrayList<>();
-        String query = "SELECT bc.id, b.title AS bookTitle, b.author AS bookAuthor, "
-                + "s.name AS studentName, s.class AS studentClass, "
-                + "bc.BorrowDate, bc.ReturnDate "
-                + "FROM BorrowCard bc "
-                + "JOIN book b ON bc.bookid = b.id "
-                + "JOIN Student s ON bc.studentid = s.id "
-                + "WHERE bc.Status = true";
-
-        try (PreparedStatement stmt = connection.prepareStatement(query);
+    public List<Card> getAll() throws SQLException {
+        List<Card> cardList = new ArrayList<>();
+        try (PreparedStatement stmt = connection.prepareStatement(GET_ALL_SQL);
              ResultSet rs = stmt.executeQuery()) {
-
             while (rs.next()) {
-                BorrowCard borrowCard = new BorrowCard();
-                borrowCard.setId(rs.getInt("id"));
+                Card card = new Card();
+                card.setId(rs.getInt("id"));
                 Book book = new Book();
                 book.setTitle(rs.getString("bookTitle"));
                 book.setAuthor(rs.getString("bookAuthor"));
-                borrowCard.setBook(book);
+                card.setBook(book);
                 Student student = new Student();
                 student.setName(rs.getString("studentName"));
                 student.setClassName(rs.getString("studentClass"));
-                borrowCard.setStudent(student);
+                card.setStudent(student);
                 String borrowDate = convertDBToJSPDateFormat(rs.getString("BorrowDate"));
                 String returnDate = convertDBToJSPDateFormat(rs.getString("ReturnDate"));
-                borrowCard.setBorrowDate(borrowDate);
-                borrowCard.setReturnDate(returnDate);
-                borrowCardList.add(borrowCard);
+                card.setBorrowDate(borrowDate);
+                card.setReturnDate(returnDate);
+                cardList.add(card);
             }
         }
-        return borrowCardList;
-    }
-
-    public Book getBorrowedBookByBorrowCardId(int cardId) throws SQLException {
-        String sql = "SELECT * FROM BorrowCard WHERE id = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-            stmt.setInt(1, cardId);
-            try (ResultSet rs = stmt.executeQuery()) {
-                if (rs.next()) {
-                    Book book = new Book();
-                    book.setId(rs.getInt("bookid"));
-                    return book;
-                }
-            }
-        }
-        return null;
+        return cardList;
     }
 }

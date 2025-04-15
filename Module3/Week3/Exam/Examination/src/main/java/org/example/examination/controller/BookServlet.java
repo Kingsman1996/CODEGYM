@@ -1,10 +1,10 @@
 package org.example.examination.controller;
 
 import org.example.examination.model.dao.BookDAO;
-import org.example.examination.model.dao.BorrowCardDAO;
+import org.example.examination.model.dao.CardDAO;
 import org.example.examination.model.dao.StudentDAO;
 import org.example.examination.model.dto.Book;
-import org.example.examination.model.dto.BorrowCard;
+import org.example.examination.model.dto.Card;
 import org.example.examination.model.dto.Student;
 
 import java.io.IOException;
@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 public class BookServlet extends HttpServlet {
     private final BookDAO bookDAO = new BookDAO();
     private final StudentDAO studentDAO = new StudentDAO();
-    private final BorrowCardDAO borrowCardDAO = new BorrowCardDAO();
+    private final CardDAO cardDAO = new CardDAO();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,8 +37,8 @@ public class BookServlet extends HttpServlet {
                 List<Student> studentList = null;
                 String today = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
                 try {
-                    book = bookDAO.getBookById(bookId);
-                    studentList = studentDAO.getStudentList();
+                    book = bookDAO.getById(bookId);
+                    studentList = studentDAO.getAll();
                 } catch (SQLException e) {
                     System.out.println(e.getMessage());
                 }
@@ -48,34 +48,34 @@ public class BookServlet extends HttpServlet {
                 request.getRequestDispatcher("borrow.jsp").forward(request, response);
                 break;
             case "list":
-                List<BorrowCard> borrowCardList = null;
+                List<Card> cardList = null;
                 try {
-                    borrowCardList = borrowCardDAO.getBorrowedCardList();
+                    cardList = cardDAO.getAll();
                 } catch (SQLException e) {
                     System.out.println(e.getMessage());
                 }
-                request.setAttribute("borrowCardList", borrowCardList);
+                request.setAttribute("cardList", cardList);
                 request.getRequestDispatcher("list.jsp").forward(request, response);
                 break;
             case "return":
-                int borrowCardId = Integer.parseInt(request.getParameter("borrowCardId"));
-                borrowCardList = null;
+                int cardId = Integer.parseInt(request.getParameter("cardId"));
+                cardList = null;
                 try {
-                    borrowCardDAO.returnBook(borrowCardId);
+                    cardDAO.returnBook(cardId);
                 } catch (SQLException e) {
                     System.out.println(e.getMessage());
                 }
                 try {
-                    borrowCardList = borrowCardDAO.getBorrowedCardList();
+                    cardList = cardDAO.getAll();
                 } catch (SQLException e) {
                     System.out.println(e.getMessage());
                 }
-                request.setAttribute("borrowCardList", borrowCardList);
+                request.setAttribute("cardList", cardList);
                 request.getRequestDispatcher("list.jsp").forward(request, response);
                 break;
             default:
                 try {
-                    request.setAttribute("bookList", bookDAO.getAllBooks());
+                    request.setAttribute("bookList", bookDAO.getAll());
                     request.getRequestDispatcher("index.jsp").forward(request, response);
                 } catch (SQLException e) {
                     System.out.println(e.getMessage());
@@ -95,7 +95,7 @@ public class BookServlet extends HttpServlet {
             String borrowDate = request.getParameter("borrowDate");
             String returnDate = request.getParameter("returnDate");
             try {
-                borrowCardDAO.insertBorrowCard(studentId, bookId, borrowDate, returnDate);
+                cardDAO.insertBorrowCard(studentId, bookId, borrowDate, returnDate);
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
             }
