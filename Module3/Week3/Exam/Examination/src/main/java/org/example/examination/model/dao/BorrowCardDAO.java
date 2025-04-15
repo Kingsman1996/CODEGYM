@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BorrowCardDAO {
-    private Connection connection = DBConnection.connect();
+    private final Connection connection = DBConnection.connect();
 
     public void insertBorrowCard(int studentId, int bookId, String borrowDate, String returnDate) throws SQLException {
         String query = "INSERT INTO BorrowCard (studentid, bookid, BorrowDate, ReturnDate, Status) VALUES (?, ?, ?, ?, ?)";
@@ -53,6 +53,7 @@ public class BorrowCardDAO {
             stmt.setInt(1, cardId);
             stmt.executeUpdate();
         }
+        new BookDAO().increaseCopies(getBorrowedBookByBorrowCardId(cardId).getId());
     }
 
     public List<BorrowCard> getBorrowedCardList() throws SQLException {
@@ -87,5 +88,20 @@ public class BorrowCardDAO {
             }
         }
         return borrowCardList;
+    }
+
+    public Book getBorrowedBookByBorrowCardId(int cardId) throws SQLException {
+        String sql = "SELECT * FROM BorrowCard WHERE id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, cardId);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    Book book = new Book();
+                    book.setId(rs.getInt("bookid"));
+                    return book;
+                }
+            }
+        }
+        return null;
     }
 }

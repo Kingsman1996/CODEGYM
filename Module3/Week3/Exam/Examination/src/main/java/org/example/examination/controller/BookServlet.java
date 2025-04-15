@@ -40,7 +40,7 @@ public class BookServlet extends HttpServlet {
                     book = bookDAO.getBookById(bookId);
                     studentList = studentDAO.getStudentList();
                 } catch (SQLException e) {
-                    throw new RuntimeException(e);
+                    System.out.println(e.getMessage());
                 }
                 request.setAttribute("today", today);
                 request.setAttribute("studentList", studentList);
@@ -59,11 +59,19 @@ public class BookServlet extends HttpServlet {
                 break;
             case "return":
                 int borrowCardId = Integer.parseInt(request.getParameter("borrowCardId"));
+                borrowCardList = null;
                 try {
                     borrowCardDAO.returnBook(borrowCardId);
                 } catch (SQLException e) {
-                    throw new RuntimeException(e);
+                    System.out.println(e.getMessage());
                 }
+                try {
+                    borrowCardList = borrowCardDAO.getBorrowedCardList();
+                } catch (SQLException e) {
+                    System.out.println(e.getMessage());
+                }
+                request.setAttribute("borrowCardList", borrowCardList);
+                request.getRequestDispatcher("list.jsp").forward(request, response);
                 break;
             default:
                 try {
@@ -81,19 +89,17 @@ public class BookServlet extends HttpServlet {
         if (action == null) {
             action = "";
         }
-        switch (action) {
-            case "borrow":
-                int studentId = Integer.parseInt(request.getParameter("studentId"));
-                int bookId = Integer.parseInt(request.getParameter("bookCode").replace("S-", ""));
-                String borrowDate = request.getParameter("borrowDate");
-                String returnDate = request.getParameter("returnDate");
-                try {
-                    borrowCardDAO.insertBorrowCard(studentId, bookId, borrowDate, returnDate);
-                } catch (SQLException e) {
-                    System.out.println(e.getMessage());
-                }
-                break;
-            default:
+        if (action.equals("borrow")) {
+            int studentId = Integer.parseInt(request.getParameter("studentId"));
+            int bookId = Integer.parseInt(request.getParameter("bookCode").replace("S-", ""));
+            String borrowDate = request.getParameter("borrowDate");
+            String returnDate = request.getParameter("returnDate");
+            try {
+                borrowCardDAO.insertBorrowCard(studentId, bookId, borrowDate, returnDate);
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            response.sendRedirect("book?action=");
         }
     }
 }
