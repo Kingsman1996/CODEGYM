@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f48fac7c-7e12-42d4-8de9-4a6bd148f7d2" name="Changes" comment="" />
+    <list default="true" id="0dbfa847-3bc1-49c1-bd3b-972fc53d79e6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,8 +19,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
-        <option value="Class" />
-        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -32,16 +30,16 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
+  "associatedIndex": 8
 }]]></component>
-  <component name="ProjectId" id="2vqAgdPZORoI40RF7Z9pnIeGcqv" />
+  <component name="ProjectId" id="2vqDTHhc6i99MSXU4F5ELjXQh3j" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Gradle.Build newbaitap1.executor": "Run",
+    "Gradle.Build baitap2.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Tomcat Server.Tomcat 9.0.1021.executor": "Run",
     "kotlin-language-version-configured": "true",
@@ -61,14 +59,14 @@
     <configuration name="Tomcat 9.0.1021" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.1021" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="hot-swap-classes" />
       <deployment>
-        <artifact name="Gradle : com : newbaitap1-1.0-SNAPSHOT.war">
+        <artifact name="Gradle : com : baitap2-1.0-SNAPSHOT.war">
           <settings>
             <option name="CONTEXT_PATH" value="" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="3170e977-e220-426d-9cba-18240c32efb1" />
+        <option name="BASE_DIRECTORY_NAME" value="4862adfe-13d8-4a2c-b163-409fb0da3531" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -76,7 +74,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="53617" />
+        <option name="DEBUG_PORT" value="53793" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -141,7 +139,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Gradle : com : newbaitap1-1.0-SNAPSHOT.war" />
+          <artifact name="Gradle : com : baitap2-1.0-SNAPSHOT.war" />
         </option>
       </method>
     </configuration>
@@ -157,13 +155,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f48fac7c-7e12-42d4-8de9-4a6bd148f7d2" name="Changes" comment="" />
+      <changelist id="0dbfa847-3bc1-49c1-bd3b-972fc53d79e6" name="Changes" comment="" />
       <created>1740061712509</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1740061712509</updated>
       <workItem from="1740061809758" duration="44000" />
-      <workItem from="1744862344030" duration="1913000" />
+      <workItem from="1744863718206" duration="905000" />
     </task>
     <servers />
   </component>
