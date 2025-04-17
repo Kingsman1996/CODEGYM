@@ -29,9 +29,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2vqDTHhc6i99MSXU4F5ELjXQh3j" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,7 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Tomcat Server.Tomcat 9.0.1021.executor": "Run",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ASUS/Desktop/library/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0.jar",
+    "last_opened_file_path": "C:/Users/ASUS/Desktop/CODEGYM/Module4/Week1/thuchanh2",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -162,6 +162,7 @@
       <updated>1740061712509</updated>
       <workItem from="1740061809758" duration="44000" />
       <workItem from="1744863718206" duration="905000" />
+      <workItem from="1744871607391" duration="1067000" />
     </task>
     <servers />
   </component>
