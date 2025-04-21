@@ -30,9 +30,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2vtTpgBxfTkcPh99muo2rDetLul" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -44,7 +44,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Tomcat Server.Tomcat 9.0.1021.executor": "Run",
-    "last_opened_file_path": "C:/Users/ASUS/Desktop/library/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0.jar",
+    "last_opened_file_path": "C:/Users/ASUS/Desktop/CODEGYM/Module4/Week1/Controller/baitap1",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -163,6 +163,7 @@
       <workItem from="1740061809758" duration="44000" />
       <workItem from="1744884267333" duration="764000" />
       <workItem from="1744963556271" duration="1828000" />
+      <workItem from="1744967325327" duration="147000" />
     </task>
     <servers />
   </component>
