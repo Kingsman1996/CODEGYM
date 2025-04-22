@@ -1,7 +1,6 @@
 package com.thuchanh3.config;
 
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
@@ -16,16 +15,12 @@ import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
 
-
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.thuchanh3")
 public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
 
     private ApplicationContext applicationContext;
-
-    @Value("${file-upload}")
-    private String upload;
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
@@ -61,13 +56,13 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/image/**")
-                .addResourceLocations("file:" + upload);
+                .addResourceLocations("file:image/");
     }
 
-    @Bean(name = "multipartResolver")
-    public CommonsMultipartResolver getResolver() {
+    @Bean
+    public CommonsMultipartResolver multipartResolver() {
         CommonsMultipartResolver resolver = new CommonsMultipartResolver();
-        resolver.setMaxUploadSizePerFile(52428800);
+        resolver.setDefaultEncoding("UTF-8");
         return resolver;
     }
 }
