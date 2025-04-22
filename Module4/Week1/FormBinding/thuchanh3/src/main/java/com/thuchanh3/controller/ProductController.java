@@ -35,9 +35,9 @@ public class ProductController {
 
     @PostMapping("/save")
     public ModelAndView saveProduct(@ModelAttribute ProductForm productForm) throws IOException {
-        String uploadDir = "image/";
+        String uploadDirectory = "image/";
         String filename = productForm.getImage().getOriginalFilename();
-        File destination = new File(uploadDir + filename);
+        File destination = new File(uploadDirectory + filename);
         productForm.getImage().transferTo(destination);
 
         Product product = new Product();
