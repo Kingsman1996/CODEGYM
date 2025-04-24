@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0be45bde-19e3-440a-8ea5-b7b16a27dfed" name="Changes" comment="" />
+    <list default="true" id="b49b3278-e62a-4a6d-9b31-c83e8a82f4d9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,35 +33,34 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf ideFingerprint="1s2djvq15monc" SIDE_TABS_SIZE_LIMIT_KEY="-1" />
+    <leaf ideFingerprint="1s2djvq15monc" />
   </component>
-  <component name="LogFilters">
-    <option name="FILTER_ERRORS" value="false" />
-    <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
-    <option name="CUSTOM_FILTER" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
+  "associatedIndex": 2
 }]]></component>
-  <component name="ProjectId" id="2w9nNdhhRkp9Y2rf5hMGhQ1WTfm" />
+  <component name="ProjectId" id="2w9u8i7s9m1KRE6PNrXKSNG6ap2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Gradle.Build thuchanh3.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Tomcat Server.Tomcat 9.0.1021.executor": "Run",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "service.view.auto.scroll.from.source": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -76,7 +75,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="98612837-c241-4f29-9dd9-52385db16b59" />
+        <option name="BASE_DIRECTORY_NAME" value="5272a0fd-73f4-4543-8133-4984afdf05f6" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -84,7 +83,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="56636" />
+        <option name="DEBUG_PORT" value="57288" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -164,12 +163,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0be45bde-19e3-440a-8ea5-b7b16a27dfed" name="Changes" comment="" />
-      <created>1745462619184</created>
+      <changelist id="b49b3278-e62a-4a6d-9b31-c83e8a82f4d9" name="Changes" comment="" />
+      <created>1745465952462</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1745462619184</updated>
-      <workItem from="1745462620430" duration="2713000" />
+      <updated>1745465952462</updated>
+      <workItem from="1745465953582" duration="1288000" />
     </task>
     <servers />
   </component>

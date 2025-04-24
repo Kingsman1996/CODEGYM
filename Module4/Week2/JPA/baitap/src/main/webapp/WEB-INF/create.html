@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <title>Tạo Blog</title>
+</head>
+<body>
+<h1>Tạo bài blog mới</h1>
+<form th:action="@{/save}" th:object="${blog}" method="post">
+    <label>Tiêu đề:</label>
+    <input type="text" th:field="*{title}" /><br/>
+    <label>Tóm tắt:</label>
+    <input type="text" th:field="*{summary}" /><br/>
+    <label>Nội dung:</label>
+    <textarea th:field="*{content}"></textarea><br/>
+    <button type="submit">Lưu</button>
+</form>
+<a th:href="@{/home}">Quay lại danh sách</a>
+</body>
+</html>

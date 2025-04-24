@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <title>Sửa Blog</title>
+</head>
+<body>
+<h1>Sửa bài blog</h1>
+<form th:action="@{/save}" th:object="${blog}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <label>Tiêu đề:</label>
+    <input type="text" th:field="*{title}" /><br/>
+    <label>Tóm tắt:</label>
+    <input type="text" th:field="*{summary}" /><br/>
+    <label>Nội dung:</label>
+    <textarea th:field="*{content}"></textarea><br/>
+    <button type="submit">Cập nhật</button>
+</form>
+<a th:href="@{/home}">Quay lại danh sách</a>
+</body>
+</html>
