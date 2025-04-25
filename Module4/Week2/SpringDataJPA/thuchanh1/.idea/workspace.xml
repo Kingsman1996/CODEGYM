@@ -51,9 +51,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2wCYwDMLTtg9JR5yPj4eY6SeuYw" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -67,6 +67,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Tomcat Server.Tomcat 9.0.1021.executor": "Run",
+    "last_opened_file_path": "C:/Users/ASUS/Desktop/CODEGYM/Module4/Week2/SpringDataJPA/thuchanh1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -186,6 +187,7 @@
       <option name="presentableId" value="Default" />
       <updated>1745547260201</updated>
       <workItem from="1745547261588" duration="8178000" />
+      <workItem from="1745556064280" duration="13000" />
     </task>
     <servers />
   </component>

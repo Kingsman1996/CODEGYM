@@ -4,6 +4,8 @@ import com.model.Customer;
 import com.model.Province;
 import com.repo.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -17,8 +19,8 @@ public class CustomerService {
         this.customerRepository = customerRepository;
     }
 
-    public Iterable<Customer> findAll() {
-        return customerRepository.findAll();
+    public Page<Customer> findAll(Pageable pageable) {
+        return customerRepository.findAll(pageable);
     }
 
     public void save(Customer customer) {

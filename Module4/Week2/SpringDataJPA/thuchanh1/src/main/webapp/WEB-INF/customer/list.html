@@ -21,7 +21,7 @@
     </div>
 </div>
 
-<table id = "customers">
+<table id="customers">
     <thead>
     <tr>
         <th>STT</th>
@@ -43,6 +43,11 @@
     </tr>
     </tbody>
 </table>
+<a class="btn btn-primary" th:if="${customers.hasPrevious()}"
+   th:href="@{/customers/page(page=${customers.number - 1})}">Previous</a>
+<span th:text="${customers.number + 1}"></span> | <span th:text="${customers.totalPages}"></span>
+<a class="btn btn-primary" th:if="${customers.hasNext()}"
+   th:href="@{/customers/page(page=${customers.number + 1})}">Next</a>
 <footer th:replace="/layout :: footer"></footer>
 </body>
 </html>

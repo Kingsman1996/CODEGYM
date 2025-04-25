@@ -5,6 +5,8 @@ import com.model.Province;
 import com.service.CustomerService;
 import com.service.ProvinceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -32,8 +34,8 @@ public class CustomerController {
     }
 
     @GetMapping("")
-    public String listCustomer(Model model) {
-        Iterable<Customer> customers = customerService.findAll();
+    public String listCustomer(Model model, Pageable pageable) {
+        Page<Customer> customers = customerService.findAll(pageable);
         model.addAttribute("customers", customers);
         return "customer/list";
     }
