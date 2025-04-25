@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f03947a7-3384-4400-bf5b-67ad4a5ac9d4" name="Changes" comment="" />
+    <list default="true" id="a99f22f5-3024-4e44-af2b-4a4d28ac3eb7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,10 +51,10 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
-  <component name="ProjectId" id="2wCYwDMLTtg9JR5yPj4eY6SeuYw" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2wCsaqvTwkIFqI3gRnkmUtY0fJg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -62,13 +62,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
-    "Gradle.Build SpringDataJPA.executor": "Run",
-    "Gradle.Build thuchanh1.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
+    "Gradle.Build baitap1.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Tomcat Server.Tomcat 9.0.1021.executor": "Run",
-    "last_opened_file_path": "C:/Users/ASUS/Desktop/CODEGYM/Module4/Week2/SpringDataJPA/thuchanh1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,12 +74,6 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ASUS\Desktop\CODEGYM\Module4\Week2\SpringDataJPA\src\main\webapp\WEB-INF" />
-      <recent name="C:\Users\ASUS\Desktop\CODEGYM\Module4\Week2\SpringDataJPA\src\main\webapp\WEB-INF\customer" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.1021" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.1021" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -94,7 +85,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="f520a4a6-fbb3-4dfb-9d3a-1b8afaa6f644" />
+        <option name="BASE_DIRECTORY_NAME" value="fbf285b4-471f-4efe-8f41-52a5b41d97df" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -102,7 +93,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="49215" />
+        <option name="DEBUG_PORT" value="51153" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -182,13 +173,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f03947a7-3384-4400-bf5b-67ad4a5ac9d4" name="Changes" comment="" />
-      <created>1745547260201</created>
+      <changelist id="a99f22f5-3024-4e44-af2b-4a4d28ac3eb7" name="Changes" comment="" />
+      <created>1745556956995</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1745547260201</updated>
-      <workItem from="1745547261588" duration="8178000" />
-      <workItem from="1745556064280" duration="1025000" />
+      <updated>1745556956995</updated>
+      <workItem from="1745556958120" duration="1357000" />
     </task>
     <servers />
   </component>
