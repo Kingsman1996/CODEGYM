@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Danh sách bài hát</title></head>
+<body>
+<h2>Danh sách bài hát</h2>
+<a th:href="@{/songs/add}">Thêm bài hát mới</a>
+<ul>
+    <li th:each="song : ${songs}">
+        <span th:text="${song.name} + ' - ' + ${song.artist} + ' (' + ${song.genre} + ')'"></span>
+        <a th:href="@{/songs/edit/{id}(id=${song.id})}">[Sửa]</a>
+    </li>
+</ul>
+</body>
+</html>
