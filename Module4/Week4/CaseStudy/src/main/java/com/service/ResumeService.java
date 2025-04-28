@@ -1,7 +1,7 @@
 package com.service;
 
 import com.model.Resume;
-import com.model.user.User;
+import com.model.User;
 import com.repo.ResumeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

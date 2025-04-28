@@ -2,7 +2,7 @@ package com.service;
 
 import com.model.Application;
 import com.model.JobPost;
-import com.model.user.User;
+import com.model.User;
 import com.repo.ApplicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

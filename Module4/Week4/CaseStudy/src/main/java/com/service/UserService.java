@@ -1,6 +1,8 @@
 package com.service;
 
-import com.model.user.User;
+import com.model.ContactInfo;
+import com.model.User;
+import com.repo.ContactInfoRepository;
 import com.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,61 +12,52 @@ import java.util.Optional;
 
 @Service
 public class UserService {
-
     private final UserRepository userRepository;
+    private final ContactInfoRepository contactInfoRepository;  // Inject ContactInfoRepository
 
     @Autowired
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, ContactInfoRepository contactInfoRepository) {
         this.userRepository = userRepository;
+        this.contactInfoRepository = contactInfoRepository;
     }
 
     @Transactional
     public void register(User user) {
-        if (emailExisted(user.getEmail())) {
-            throw new IllegalArgumentException("Email đã tồn tại");
+        if (userRepository.existsByUsername(user.getUsername())) {
+            throw new IllegalArgumentException("Tài khoản đã tồn tại");
         }
-        if (usernameExisted(user.getUsername())) {
-            throw new IllegalArgumentException("Tên người dùng đã tồn tại");
-        }
+
         userRepository.save(user);
+        ContactInfo contactInfo = new ContactInfo();
+        contactInfo.setUser(user);
+        contactInfoRepository.save(contactInfo);
     }
 
     public boolean checkLogin(String username, String password) {
-        if (!usernameExisted(username)) {
-            return false;
-        }
-        User user = userRepository.getByUsername(username);
-        return user.getPassword().equals(password);
+        Optional<User> user = userRepository.findByUsername(username);
+        return user.map(value -> value.getPassword().equals(password)).orElse(false);
     }
 
-    public User getByEmail(String email) {
-        return userRepository.getByEmail(email);
+    public User findByUsername(String username) {
+        Optional<User> optionalUser = userRepository.findByUsername(username);
+        return optionalUser.orElse(null);
     }
 
     @Transactional
-    public void update(Long userId, String email, String password) {
-        User foundUser = userRepository.findById(userId).orElse(null);
-        if (foundUser != null) {
-            foundUser.setEmail(email);
-            foundUser.setPassword(password);
+    public void update(User updatedUser) {
+        Optional<User> userOptional = userRepository.findById(updatedUser.getId());
+        if (userOptional.isPresent()) {
+            User foundUser = userOptional.get();
+            foundUser.setPassword(updatedUser.getPassword());
+            ContactInfo currentContactInfo = foundUser.getContactInfo();
+            currentContactInfo.setAddress(updatedUser.getContactInfo().getAddress());
+            currentContactInfo.setPhone(updatedUser.getContactInfo().getPhone());
+            currentContactInfo.setEmail(updatedUser.getContactInfo().getEmail());
             userRepository.save(foundUser);
         }
     }
 
-    public User getByUserName(String username) {
-        return userRepository.getByUsername(username);
-    }
-
-    public User getById(Long id) {
-        Optional<User> user = userRepository.findById(id);
-        return user.orElse(null);
-    }
-
-    private boolean emailExisted(String email) {
-        return email.equals(userRepository.getByEmail(email).getEmail());
-    }
-
-    private boolean usernameExisted(String username) {
-        return username.equals(userRepository.getByUsername(username).getUsername());
+    public User findById(Long id) {
+        return userRepository.findById(id).orElse(null);
     }
 }

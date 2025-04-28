@@ -1,7 +1,5 @@
 package com.model;
 
-import com.model.user.User;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
@@ -40,6 +38,16 @@ public class JobPost {
     private User postedBy;
 
     public JobPost() {
+    }
+
+    @PrePersist
+    public void prePersist() {
+        if (this.status == null || this.status.isEmpty()) {
+            this.status = "PENDING";
+        }
+        if (this.postedDate == null) {
+            this.postedDate = LocalDate.now();
+        }
     }
 
     public Long getId() {

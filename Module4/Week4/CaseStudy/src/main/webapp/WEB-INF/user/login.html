@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
 <head>
     <title>Đăng nhập</title>
 </head>
@@ -7,7 +7,7 @@
 <h2>Đăng nhập</h2>
 <p th:if="${message}" th:text="${message}" style="color:red;"></p>
 
-<form th:action="@{/users/login}" method="post">
+<form th:action="@{/login}" method="post">
     <label>Tên đăng nhập:</label>
     <input type="text" name="username" required /><br/>
 
@@ -17,6 +17,6 @@
     <button type="submit">Đăng nhập</button>
 </form>
 
-<p><a th:href="@{/users/register}">Chưa có tài khoản? Đăng ký</a></p>
+<p><a th:href="@{/register}">Chưa có tài khoản? Đăng ký</a></p>
 </body>
 </html>

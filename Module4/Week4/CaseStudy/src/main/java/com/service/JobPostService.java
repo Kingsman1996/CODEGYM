@@ -2,7 +2,7 @@ package com.service;
 
 
 import com.model.JobPost;
-import com.model.user.User;
+import com.model.User;
 import com.repo.JobPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,9 +29,6 @@ public class JobPostService {
         return jobPostRepository.getByStatus("APPROVED");
     }
 
-    public List<JobPost> getByUser(User user) {
-        return jobPostRepository.getByUser(user);
-    }
 
     public Optional<JobPost> getById(Long id) {
         return jobPostRepository.findById(id);

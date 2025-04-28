@@ -1,21 +1,18 @@
 package com.controller;
 
-import com.model.user.User;
+import com.model.User;
 import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @Controller
-@Validated
-@RequestMapping("/users")
 public class UserController {
-
     private final UserService userService;
 
     @Autowired
@@ -32,14 +29,16 @@ public class UserController {
     @PostMapping("/register")
     public String register(@Valid @ModelAttribute User user, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            model.addAttribute("user", user);
             return "user/register";
-        } else {
-            userService.register(user);
-            model.addAttribute("message", "Đăng ký thành công!");
-            model.addAttribute("user", new User());
-            return "user/login";
         }
+        try {
+            userService.register(user);
+        } catch (IllegalArgumentException e) {
+            model.addAttribute("error", e.getMessage());
+            return "user/register";
+        }
+        model.addAttribute("success", "Đăng ký thành công");
+        return "/user/register";
     }
 
     @GetMapping("/login")
@@ -50,33 +49,38 @@ public class UserController {
     @PostMapping("/login")
     public String login(@RequestParam String username,
                         @RequestParam String password,
-                        Model model) {
+                        Model model, HttpSession session) {
         if (!userService.checkLogin(username, password)) {
             model.addAttribute("message", "Tên đăng nhập hoặc mật khẩu sai.");
             return "user/login";
         }
-        model.addAttribute("user", userService.getByUserName(username));
+        User user = userService.findByUsername(username);
+        session.setAttribute("user", user);
+        model.addAttribute("user", user);
         return "user/profile";
     }
 
-    @GetMapping("/update/{userId}")
-    public String showUpdateForm(@PathVariable Long userId, Model model) {
-        model.addAttribute("user", userService.getById(userId));
+    @GetMapping("/update")
+    public String showUpdateForm(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+        model.addAttribute("user", user);
         return "user/update";
     }
 
-    @PostMapping("/update/{id}")
-    public String updateUser(@PathVariable Long id,
-                             @RequestParam String email,
-                             @RequestParam String password) {
-        userService.update(id, email, password);
-        return "redirect:/users/profile/" + id;
+    @PostMapping("/update")
+    public String updateUser(@ModelAttribute("user") User updatedUser, HttpSession session) {
+        userService.update(updatedUser);
+        session.setAttribute("user", updatedUser);
+        return "redirect:/profile";
     }
 
-
-    @GetMapping("/profile/{userId}")
-    public String getUserProfile(@PathVariable Long userId, Model model) {
-        model.addAttribute("user", userService.getById(userId));
-        return "user/profile";
+    @GetMapping("/profile")
+    public String showProfile(HttpSession session, Model model) {
+        User user = (User) session.getAttribute("user");
+        if (user != null) {
+            model.addAttribute("user", user);
+            return "user/profile";
+        }
+        return "redirect:/login";
     }
 }

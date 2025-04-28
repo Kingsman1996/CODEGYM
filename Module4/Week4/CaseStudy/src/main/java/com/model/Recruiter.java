@@ -1,6 +1,4 @@
-package com.model.user;
-
-import com.model.JobPost;
+package com.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.OneToMany;

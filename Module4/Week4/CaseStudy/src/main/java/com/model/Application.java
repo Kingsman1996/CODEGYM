@@ -1,5 +1,4 @@
 package com.model;
-import com.model.user.User;
 
 import javax.persistence.*;
 import javax.persistence.ManyToOne;
@@ -38,7 +37,7 @@ public class Application {
     @PrePersist
     public void prePersist() {
         this.appliedAt = LocalDate.now();
-        if (this.status == null) {
+        if (this.status == null || this.status.isEmpty()) {
             this.status = "SUBMITTED";
         }
     }

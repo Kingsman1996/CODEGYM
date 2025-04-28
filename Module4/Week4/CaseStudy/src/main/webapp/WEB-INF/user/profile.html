@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Hồ sơ người dùng</title>
+    <meta charset="UTF-8">
+    <title>Profile</title>
 </head>
 <body>
-<h2>Xin chào, <span th:text="${user.username}"></span>!</h2>
+<h1>Chào mừng, <span th:text="${user.username}"></span>!</h1>
 
-<p>Email: <span th:text="${user.email}"></span></p>
+<h3>Thông tin cá nhân:</h3>
+<p>Email: <span th:text="${user.contactInfo.email}"></span></p>
+<p>Số điện thoại: <span th:text="${user.contactInfo.phone}"></span></p>
+<p>Địa chỉ: <span th:text="${user.contactInfo.address}"></span></p>
 
-<p><a th:href="@{'/users/update/' + ${user.id}}">Cập nhật thông tin</a></p>
+<div th:if="${user.contactInfo == null}">
+    <p>Thông tin liên lạc chưa được cập nhật.</p>
+</div>
+<a th:href="@{/update}" class="btn btn-primary">Cập nhật thông tin</a>
 </body>
 </html>

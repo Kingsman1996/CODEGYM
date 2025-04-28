@@ -1,4 +1,4 @@
-package com.model.user;
+package com.model;
 
 public enum UserRole {
     RECRUITER, WORKER, ADMIN

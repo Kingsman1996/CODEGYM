@@ -1,38 +1,45 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng ký</title>
 </head>
 <body>
 <h2>Đăng ký tài khoản</h2>
 
-<p th:if="${message}" th:text="${message}" style="color:green;"></p>
+<div th:if="${success}" style="color:green;">
+    <p th:text="${success}"></p>
+</div>
 
-<form th:action="@{/users/register}" th:object="${user}" method="post">
-    <label>Tên đăng nhập:</label>
-    <input type="text" th:field="*{username}"/>
-    <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" style="color:red;"></p><br/>
+<div th:if="${error}" style="color:red;">
+    <p th:text="${error}"></p>
+</div>
 
-    <label>Mật khẩu:</label>
-    <input type="password" th:field="*{password}"/>
-    <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color:red;"></p><br/>
+<form action="/users/register" method="post">
+    <label for="username">Tên đăng nhập:</label>
+    <input type="text" id="username" name="username" th:value="${user.username}" required>
+    <div th:if="${#fields.hasErrors('user.username')}" style="color:red;">
+        <p th:errors="*{user.username}">Tên đăng nhập không hợp lệ</p>
+    </div><br><br>
 
-    <label>Email:</label>
-    <input type="email" th:field="*{email}"/>
-    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color:red;"></p><br/>
-
-    <label>Vai trò:</label>
-    <select th:field="*{role}">
-        <option value="">-- Chọn vai trò --</option>
-        <option value="NHATUYENDUNG">Nhà tuyển dụng</option>
-        <option value="NGUOILAODONG">Người lao động</option>
+    <label for="password">Mật khẩu:</label>
+    <input type="password" id="password" name="password" required>
+    <div th:if="${#fields.hasErrors('user.password')}" style="color:red;">
+        <p th:errors="*{user.password}">Mật khẩu không hợp lệ</p>
+    </div><br><br>
+    <label for="role">Vai trò:</label>
+    <select id="role" name="role" required>
+        <option value="RECRUITER">Nhà tuyển dụng</option>
+        <option value="WORKER">Người lao động</option>
     </select>
-    <p th:if="${#fields.hasErrors('role')}" th:errors="*{role}" style="color:red;"></p><br/>
-
+    <div th:if="${#fields.hasErrors('user.role')}" style="color:red;">
+        <p th:errors="*{user.role}">Vui lòng chọn vai trò</p>
+    </div><br><br>
     <button type="submit">Đăng ký</button>
 </form>
 
-<p><a th:href="@{/users/login}">Đã có tài khoản? Đăng nhập</a></p>
+<p>Đã có tài khoản? <a th:href="@{/login}">Đăng nhập</a></p>
 </body>
 </html>

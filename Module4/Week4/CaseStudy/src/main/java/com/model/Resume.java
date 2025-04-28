@@ -1,7 +1,5 @@
 package com.model;
 
-import com.model.user.User;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -33,7 +31,9 @@ public class Resume {
 
     @PrePersist
     public void prePersist() {
-        this.createdAt = LocalDate.now();
+        if (this.createdAt == null) {
+            this.createdAt = LocalDate.now();
+        }
     }
 
     public Long getId() {
