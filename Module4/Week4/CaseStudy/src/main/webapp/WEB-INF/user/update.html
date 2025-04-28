@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <title>Cập nhật thông tin</title>
+</head>
+<body>
+<h2>Cập nhật thông tin</h2>
+<p th:if="${message}" th:text="${message}" style="color:green;"></p>
+
+<form th:action="@{'/users/update/' + ${user.id}}" th:object="${user}" method="post">
+    <label>Email mới:</label>
+    <input type="email" th:field="*{email}" required /><br/>
+
+    <label>Mật khẩu mới:</label>
+    <input type="password" th:field="*{password}" required /><br/>
+
+    <button type="submit">Cập nhật</button>
+</form>
+
+<p><a th:href="@{'/users/profile/' + ${user.id}}">Quay lại hồ sơ</a></p>
+</body>
+</html>

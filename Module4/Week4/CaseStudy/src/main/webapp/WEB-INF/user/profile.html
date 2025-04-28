@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hồ sơ người dùng</title>
+</head>
+<body>
+<h2>Xin chào, <span th:text="${user.username}"></span>!</h2>
+
+<p>Email: <span th:text="${user.email}"></span></p>
+
+<p><a th:href="@{'/users/update/' + ${user.id}}">Cập nhật thông tin</a></p>
+</body>
+</html>

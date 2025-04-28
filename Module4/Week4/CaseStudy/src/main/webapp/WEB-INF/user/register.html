@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký</title>
+</head>
+<body>
+<h2>Đăng ký tài khoản</h2>
+
+<p th:if="${message}" th:text="${message}" style="color:green;"></p>
+
+<form th:action="@{/users/register}" th:object="${user}" method="post">
+    <label>Tên đăng nhập:</label>
+    <input type="text" th:field="*{username}"/>
+    <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" style="color:red;"></p><br/>
+
+    <label>Mật khẩu:</label>
+    <input type="password" th:field="*{password}"/>
+    <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color:red;"></p><br/>
+
+    <label>Email:</label>
+    <input type="email" th:field="*{email}"/>
+    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color:red;"></p><br/>
+
+    <label>Vai trò:</label>
+    <select th:field="*{role}">
+        <option value="">-- Chọn vai trò --</option>
+        <option value="NHATUYENDUNG">Nhà tuyển dụng</option>
+        <option value="NGUOILAODONG">Người lao động</option>
+    </select>
+    <p th:if="${#fields.hasErrors('role')}" th:errors="*{role}" style="color:red;"></p><br/>
+
+    <button type="submit">Đăng ký</button>
+</form>
+
+<p><a th:href="@{/users/login}">Đã có tài khoản? Đăng nhập</a></p>
+</body>
+</html>
