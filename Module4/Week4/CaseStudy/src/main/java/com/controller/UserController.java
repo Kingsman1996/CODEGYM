@@ -1,6 +1,7 @@
 package com.controller;
 
-import com.model.User;
+import com.model.user.User;
+import com.model.user.UserRole;
 import com.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -56,8 +57,13 @@ public class UserController {
         }
         User user = userService.findByUsername(username);
         session.setAttribute("user", user);
-        model.addAttribute("user", user);
-        return "user/profile";
+        if (user.getRole() == UserRole.ADMIN) {
+            return "redirect:/admin/dashboard";
+        } else if (user.getRole() == UserRole.RECRUITER) {
+            return "redirect:/recruiter/home";
+        } else {
+            return "redirect:/candidate/home";
+        }
     }
 
     @GetMapping("/update")
@@ -74,13 +80,9 @@ public class UserController {
         return "redirect:/profile";
     }
 
-    @GetMapping("/profile")
-    public String showProfile(HttpSession session, Model model) {
-        User user = (User) session.getAttribute("user");
-        if (user != null) {
-            model.addAttribute("user", user);
-            return "user/profile";
-        }
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
         return "redirect:/login";
     }
 }

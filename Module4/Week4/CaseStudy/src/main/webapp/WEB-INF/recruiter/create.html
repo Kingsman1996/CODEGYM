@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tạo bài đăng mới</title>
+</head>
+<body>
+<h1>Tạo bài đăng mới</h1>
+
+<form th:action="@{/recruiter/create}" method="post" th:object="${post}">
+    <div>
+        <label for="title">Tiêu đề:</label>
+        <input type="text" id="title" th:field="*{title}" placeholder="Nhập tiêu đề" required>
+        <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" style="color: red;"></div>
+    </div>
+
+    <div>
+        <label for="description">Mô tả:</label>
+        <textarea id="description" th:field="*{description}" placeholder="Nhập mô tả" rows="5" required></textarea>
+        <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}" style="color: red;"></div>
+    </div>
+    <div>
+        <button type="submit">Đăng bài</button>
+        <a th:href="@{/recruiter/home}" style="margin-left: 10px;">Quay lại</a>
+    </div>
+</form>
+</body>
+</html>

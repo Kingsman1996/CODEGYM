@@ -38,12 +38,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/controller/CandidateController.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/controller/RecruiterController.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -74,6 +78,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -83,11 +88,11 @@
       <recent name="C:\Users\ASUS\Desktop\CODEGYM\Module4\Week4\CaseStudy\src\main\webapp\WEB-INF\customer" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Desktop\CODEGYM\Module4\Week4\CaseStudy\src\main\webapp\WEB-INF\candidate" />
       <recent name="C:\Users\ASUS\Desktop\CODEGYM\Module4\Week4\CaseStudy\src\main\webapp\WEB-INF\jobpost" />
       <recent name="C:\Users\ASUS\Desktop\CODEGYM\Module4\Week4\CaseStudy\src\main\webapp\WEB-INF\resume" />
       <recent name="C:\Users\ASUS\Desktop\CODEGYM\Module4\Week4\CaseStudy\src\main\webapp\WEB-INF\application" />
       <recent name="C:\Users\ASUS\Desktop\CODEGYM\Module4\Week4\CaseStudy\src\main\webapp\WEB-INF\user" />
-      <recent name="C:\Users\ASUS\Desktop\CODEGYM\Module4\Week4\CaseStudy\src\main\webapp\WEB-INF" />
     </key>
   </component>
   <component name="RunManager">
@@ -199,10 +204,21 @@
       <workItem from="1745648899071" duration="9630000" />
       <workItem from="1745804537902" duration="10746000" />
       <workItem from="1745820731388" duration="13090000" />
+      <workItem from="1745890076918" duration="3827000" />
+      <workItem from="1745893934583" duration="1414000" />
+      <workItem from="1745897460374" duration="4552000" />
+      <workItem from="1745907930531" duration="12988000" />
+      <workItem from="1745994111734" duration="16069000" />
+      <workItem from="1746058971426" duration="210000" />
+      <workItem from="1746059200090" duration="2704000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

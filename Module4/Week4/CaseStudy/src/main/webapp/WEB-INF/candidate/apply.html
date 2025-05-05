@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/candidate/post/{postId}/apply}" method="post">
+    <input type="file" name="cvFile">
+    <button type="submit">Xác nhận</button>
+</form>
+</body>
+</html>
