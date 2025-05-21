@@ -4,17 +4,102 @@
     <meta charset="UTF-8" />
     <title>Danh sách Khuyến Mãi</title>
     <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+
+        form label {
+            font-weight: bold;
+        }
+
+        form input {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+        }
+
+        form button {
+            padding: 8px 16px;
+            border: none;
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #0b5ed7;
+        }
+
+        form .btn-clear {
+            background-color: transparent;
+            color: #dc3545;
+            border: none;
+            padding: 8px 12px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .btn-add {
+            display: inline-block;
+            margin-bottom: 12px;
+            padding: 8px 14px;
+            background-color: #198754;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .btn-add:hover {
+            background-color: #157347;
+        }
+
         table {
-            border-collapse: collapse;
             width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
         }
+
         th, td {
-            padding: 12px;
-            border: 1px solid #ddd;
+            padding: 14px 16px;
+            border-bottom: 1px solid #dee2e6;
+            text-align: left;
         }
+
         th {
-            background-color: #f2f2f2;
+            background-color: #e9ecef;
+            color: #495057;
+            text-transform: uppercase;
+            font-size: 14px;
         }
+
+        tbody tr:hover {
+            background-color: #f1f3f5;
+        }
+
         .btn-delete {
             background-color: #e74c3c;
             color: white;
@@ -22,11 +107,14 @@
             padding: 6px 12px;
             cursor: pointer;
             border-radius: 4px;
+            font-weight: bold;
         }
+
         .btn-delete:hover {
             background-color: #c0392b;
         }
     </style>
+
     <script type="text/javascript">
         function confirmDelete(button) {
             const promotionId = button.getAttribute('data-id');
@@ -36,10 +124,9 @@
             }
         }
     </script>
-
-
 </head>
 <body>
+
 <form th:action="@{/list}" method="get">
     <label>Mức giảm giá từ:</label>
     <input type="number" step="any" name="minDiscount" th:value="${minDiscount}" />
@@ -51,11 +138,13 @@
     <input type="text" name="endTime" th:value="${endTime}" />
 
     <button type="submit">Tìm kiếm</button>
-    <a th:href="@{/list}">Xóa bộ lọc</a>
+    <a class="btn-clear" th:href="@{/list}">Xóa bộ lọc</a>
 </form>
 
 <h1>Danh sách Khuyến Mãi</h1>
-<a th:href="@{/add}">Thêm Khuyến Mãi Mới</a>
+
+<a th:href="@{/add}" class="btn-add">Thêm Khuyến Mãi Mới</a>
+
 <table>
     <thead>
     <tr>
@@ -72,7 +161,7 @@
         <td th:text="${promotion.title}"></td>
         <td th:text="${promotion.startTime}"></td>
         <td th:text="${promotion.endTime}"></td>
-        <td th:text="${promotion.discount}"></td>
+        <td th:text="${promotion.discount + 'VND'}"></td>
         <td th:text="${promotion.details}"></td>
         <td>
             <button class="btn-delete"
@@ -80,11 +169,10 @@
                     onclick="confirmDelete(this)">
                 Xóa
             </button>
-
-
         </td>
     </tr>
     </tbody>
 </table>
+
 </body>
 </html>
