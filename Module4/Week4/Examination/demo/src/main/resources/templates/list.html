@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Danh sách Khuyến Mãi</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .btn-delete {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .btn-delete:hover {
+            background-color: #c0392b;
+        }
+    </style>
+    <script type="text/javascript">
+        function confirmDelete(button) {
+            const promotionId = button.getAttribute('data-id');
+            const promotionTitle = button.getAttribute('data-title');
+            if (confirm(`Bạn có chắc muốn xóa khuyến mãi: "${promotionTitle}" không?`)) {
+                window.location.href = "/delete/" + promotionId;
+            }
+        }
+    </script>
+
+
+</head>
+<body>
+<form th:action="@{/list}" method="get">
+    <label>Mức giảm giá từ:</label>
+    <input type="number" step="any" name="minDiscount" th:value="${minDiscount}" />
+
+    <label>Thời gian bắt đầu từ (dd/MM/yyyy):</label>
+    <input type="text" name="startTime" th:value="${startTime}" />
+
+    <label>Thời gian kết thúc đến (dd/MM/yyyy):</label>
+    <input type="text" name="endTime" th:value="${endTime}" />
+
+    <button type="submit">Tìm kiếm</button>
+    <a th:href="@{/list}">Xóa bộ lọc</a>
+</form>
+
+<h1>Danh sách Khuyến Mãi</h1>
+<a th:href="@{/add}">Thêm Khuyến Mãi Mới</a>
+<table>
+    <thead>
+    <tr>
+        <th>Tiêu đề</th>
+        <th>Thời gian bắt đầu</th>
+        <th>Thời gian kết thúc</th>
+        <th>Mức giảm giá</th>
+        <th>Chi tiết</th>
+        <th>Hành động</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="promotion : ${promotions}">
+        <td th:text="${promotion.title}"></td>
+        <td th:text="${promotion.startTime}"></td>
+        <td th:text="${promotion.endTime}"></td>
+        <td th:text="${promotion.discount}"></td>
+        <td th:text="${promotion.details}"></td>
+        <td>
+            <button class="btn-delete"
+                    th:attr="data-id=${promotion.id}, data-title=${promotion.title}"
+                    onclick="confirmDelete(this)">
+                Xóa
+            </button>
+
+
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Thêm Khuyến Mãi</title>
+    <style>
+        /* Reset cơ bản */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        form {
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 480px;
+        }
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: 600;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            margin-top: 6px;
+            border: 1.8px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: border-color 0.3s ease;
+            resize: vertical;
+            font-family: inherit;
+        }
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        textarea:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        textarea {
+            min-height: 80px;
+        }
+        div[th\\:if] {
+            color: #d93025;  /* đỏ lỗi */
+            margin-top: 6px;
+            font-size: 13px;
+            font-style: italic;
+        }
+        button {
+            margin-top: 30px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 12px 28px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 600;
+            transition: background-color 0.25s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{/add}" th:object="${promotion}" method="post">
+    <h1>Thêm Khuyến Mãi</h1>
+    <label>Tiêu đề:</label>
+    <input type="text" th:field="*{title}" />
+    <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+
+    <label>Thời gian bắt đầu (dd/MM/yyyy):</label>
+    <input type="text" th:field="*{startTime}" />
+    <div th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}"></div>
+
+    <label>Thời gian kết thúc (dd/MM/yyyy):</label>
+    <input type="text" th:field="*{endTime}" />
+    <div th:if="${#fields.hasErrors('endTime')}" th:errors="*{endTime}"></div>
+
+    <label>Mức giảm giá:</label>
+    <input type="number" th:field="*{discount}" step="0.01" min="10000" />
+    <div th:if="${#fields.hasErrors('discount')}" th:errors="*{discount}"></div>
+
+    <label>Chi tiết:</label>
+    <textarea th:field="*{details}"></textarea>
+    <div th:if="${#fields.hasErrors('details')}" th:errors="*{details}"></div>
+
+    <div th:if="${formatError != null}" th:text="${formatError}"></div>
+
+    <button type="submit">Thêm</button>
+</form>
+</body>
+</html>
