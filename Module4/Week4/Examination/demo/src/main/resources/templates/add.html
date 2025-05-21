@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <title>Thêm Khuyến Mãi</title>
     <style>
-        /* Reset cơ bản */
         * {
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f0f2f5;
@@ -18,11 +18,7 @@
             align-items: flex-start;
             min-height: 100vh;
         }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 30px;
-        }
+
         form {
             background-color: #fff;
             padding: 30px 40px;
@@ -31,12 +27,20 @@
             width: 100%;
             max-width: 480px;
         }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
         label {
             display: block;
             margin-top: 20px;
             font-weight: 600;
             color: #555;
         }
+
         input[type="text"],
         input[type="number"],
         textarea {
@@ -50,21 +54,25 @@
             resize: vertical;
             font-family: inherit;
         }
+
         input[type="text"]:focus,
         input[type="number"]:focus,
         textarea:focus {
             border-color: #007bff;
             outline: none;
         }
+
         textarea {
             min-height: 80px;
         }
-        div[th\\:if] {
+
+        .error {
             color: #d93025;  /* đỏ lỗi */
             margin-top: 6px;
             font-size: 13px;
             font-style: italic;
         }
+
         button {
             margin-top: 30px;
             background-color: #007bff;
@@ -78,6 +86,7 @@
             font-weight: 600;
             transition: background-color 0.25s ease;
         }
+
         button:hover {
             background-color: #0056b3;
         }
@@ -86,27 +95,28 @@
 <body>
 <form th:action="@{/add}" th:object="${promotion}" method="post">
     <h1>Thêm Khuyến Mãi</h1>
+
     <label>Tiêu đề:</label>
     <input type="text" th:field="*{title}" />
-    <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
+    <div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="error"></div>
 
     <label>Thời gian bắt đầu (dd/MM/yyyy):</label>
     <input type="text" th:field="*{startTime}" />
-    <div th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}"></div>
+    <div th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}" class="error"></div>
 
     <label>Thời gian kết thúc (dd/MM/yyyy):</label>
     <input type="text" th:field="*{endTime}" />
-    <div th:if="${#fields.hasErrors('endTime')}" th:errors="*{endTime}"></div>
+    <div th:if="${#fields.hasErrors('endTime')}" th:errors="*{endTime}" class="error"></div>
 
     <label>Mức giảm giá:</label>
     <input type="number" th:field="*{discount}" step="0.01" min="10000" />
-    <div th:if="${#fields.hasErrors('discount')}" th:errors="*{discount}"></div>
+    <div th:if="${#fields.hasErrors('discount')}" th:errors="*{discount}" class="error"></div>
 
     <label>Chi tiết:</label>
     <textarea th:field="*{details}"></textarea>
-    <div th:if="${#fields.hasErrors('details')}" th:errors="*{details}"></div>
+    <div th:if="${#fields.hasErrors('details')}" th:errors="*{details}" class="error"></div>
 
-    <div th:if="${formatError != null}" th:text="${formatError}"></div>
+    <div th:if="${formatError != null}" th:text="${formatError}" class="error"></div>
 
     <button type="submit">Thêm</button>
 </form>

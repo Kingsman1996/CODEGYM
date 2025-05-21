@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -75,22 +76,42 @@ public class PromotionService {
                 endTime = LocalDate.parse(endTimeStr, formatter);
             }
         } catch (DateTimeParseException e) {
-            // Xử lý lỗi định dạng ngày (bạn có thể throw exception hoặc trả về rỗng)
+            return new ArrayList<>();
         }
 
-        if (minDiscount != null && startTime == null && endTime == null) {
+        boolean hasDiscount = minDiscount != null;
+        boolean hasStart = startTime != null;
+        boolean hasEnd = endTime != null;
+
+        if (!hasDiscount && !hasStart && !hasEnd) {
+            return promotionRepository.findAll();
+        }
+
+        if (hasDiscount && !hasStart && !hasEnd) {
             return promotionRepository.findByDiscountGreaterThanEqual(minDiscount);
         }
 
-        if (minDiscount == null && startTime != null && endTime == null) {
+        if (!hasDiscount && hasStart && !hasEnd) {
             return promotionRepository.findByStartTimeGreaterThanEqual(startTime);
         }
 
-        if (minDiscount == null && startTime == null && endTime != null) {
+        if (!hasDiscount && !hasStart) {
             return promotionRepository.findByEndTimeLessThanEqual(endTime);
         }
 
-        return promotionRepository.findAll();
+        if (hasDiscount && hasStart && !hasEnd) {
+            return promotionRepository.findByDiscountGreaterThanEqualAndStartTimeGreaterThanEqual(minDiscount, startTime);
+        }
+
+        if (hasDiscount && !hasStart) {
+            return promotionRepository.findByDiscountGreaterThanEqualAndEndTimeLessThanEqual(minDiscount, endTime);
+        }
+
+        if (!hasDiscount) {
+            return promotionRepository.findByStartTimeGreaterThanEqualAndEndTimeLessThanEqual(startTime, endTime);
+        }
+        return promotionRepository.findByDiscountGreaterThanEqualAndStartTimeGreaterThanEqualAndEndTimeLessThanEqual(minDiscount, startTime, endTime);
     }
+
 
 }

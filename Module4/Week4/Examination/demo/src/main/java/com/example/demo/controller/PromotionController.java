@@ -51,12 +51,10 @@ public class PromotionController {
             Model model) {
 
         List<Promotion> promotions = promotionService.searchPromotions(minDiscount, startTime, endTime);
-        model.addAttribute("promotions", promotions);
-
-        // Để giữ giá trị tìm kiếm trên form
         model.addAttribute("minDiscount", minDiscount);
         model.addAttribute("startTime", startTime);
         model.addAttribute("endTime", endTime);
+        model.addAttribute("promotions", promotions);
 
         return "list";
     }
