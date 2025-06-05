@@ -1,0 +1,102 @@
+{
+  "medicines": [
+    {
+      "id": "1",
+      "code": "PROD-0001",
+      "name": "Paracetamol",
+      "description": "Thuốc giảm đau và hạ sốt",
+      "category": "Thuốc giảm đau",
+      "price": 15000,
+      "quantity": 100,
+      "importDate": "01/06/2025"
+    },
+    {
+      "id": "2",
+      "code": "PROD-0002",
+      "name": "Amoxicillin",
+      "description": "Kháng sinh dùng để điều trị nhiễm trùng",
+      "category": "Kháng sinh",
+      "price": 45000,
+      "quantity": 50,
+      "importDate": "15/05/2025"
+    },
+    {
+      "id": "3",
+      "code": "PROD-003",
+      "name": "Cetirizine",
+      "description": "Thuốc kháng histamin để giảm dị ứng",
+      "category": "Thuốc kháng histamin",
+      "price": 20000,
+      "quantity": 75,
+      "importDate": "20/05/2025"
+    },
+    {
+      "id": "4",
+      "code": "PROD-0004",
+      "name": "thuốc",
+      "category": "Vitamin",
+      "description": "mô",
+      "quantity": 2,
+      "price": 10000,
+      "importDate": "2025-06-04"
+    },
+    {
+      "id": "5",
+      "code": "PROD-0004",
+      "name": "dự án",
+      "category": "Thuốc kháng histamin",
+      "description": "qqưe",
+      "quantity": 3,
+      "price": 8,
+      "importDate": "2025-06-02"
+    },
+    {
+      "id": "6",
+      "code": "PROD-0004",
+      "name": "qưeq",
+      "category": "Kháng sinh",
+      "description": "eqưeqe",
+      "quantity": 1,
+      "price": 2,
+      "importDate": "2025-06-01"
+    },
+    {
+      "id": "7",
+      "code": "PROD-0008",
+      "name": "qqqqqqqqqqqq",
+      "category": "Kháng sinh",
+      "description": "qqqqqqqqqqqqqq",
+      "quantity": 111,
+      "price": 111111,
+      "importDate": "2025-06-02"
+    },
+    {
+      "id": 8,
+      "code": "PROD-0009",
+      "name": "qeweqweqweqw",
+      "category": "Thuốc giảm đau",
+      "description": "qeqeqwewqe",
+      "quantity": 2,
+      "price": 4,
+      "importDate": "2025-06-03"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Thuốc giảm đau"
+    },
+    {
+      "id": "2",
+      "name": "Kháng sinh"
+    },
+    {
+      "id": "3",
+      "name": "Thuốc kháng histamin"
+    },
+    {
+      "id": "4",
+      "name": "Vitamin"
+    }
+  ]
+}
